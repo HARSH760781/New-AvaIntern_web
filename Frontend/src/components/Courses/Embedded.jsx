@@ -169,7 +169,7 @@ const Embedded = () => {
           "🚀 Power management techniques",
           "💼 Hands-on Real Projects",
         ]}
-        imageUrl={"hero_image.jpg"}
+        imageUrl={"Courses/Embedded System.png"}
       />
 
       {/* Course Menu Navigation */}

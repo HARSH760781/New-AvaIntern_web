@@ -128,19 +128,18 @@ const Hero = () => {
             transition={{ delay: 0.5, duration: 0.8 }}
           /> */}
           <Swiper
-            effect={"cards"}
-            grabCursor={true}
-            modules={[EffectCards, Autoplay, Pagination, Navigation]}
-            pagination={{ clickable: true }}
-            loop={true} // Enable looping
-            // autoplay={{
-            //   delay: 2000, // Adjust delay
-            //   disableOnInteraction: false,
-            // }}
-            spaceBetween={30}
-            centeredSlides={true}
-            slidesPerView={1} // Ensure single slide view
-            loopFillGroupWithBlank={true} // Helps with looping in certain modes
+            effect={"cards"} // Use the 'cards' effect
+            modules={[Autoplay, Pagination, EffectCards]} // Include necessary modules
+            loop={true} // Enable infinite loop
+            autoplay={{
+              delay: 2000, // 1 second delay for smooth transitions
+              disableOnInteraction: false, // Keep autoplay going even after user interaction
+              reverseDirection: true, // Reverse the autoplay direction (optional)
+            }}
+            pagination={{ clickable: true }} // Enable clickable pagination
+            spaceBetween={10} // Space between slides
+            slidesPerView={2} // Display one slide at a time
+            grabCursor={true} // Show grab cursor for better UX
           >
             {bootcampImages.length > 0 ? (
               bootcampImages.map((image, index) => (

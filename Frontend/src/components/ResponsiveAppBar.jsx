@@ -97,7 +97,7 @@ function ResponsiveAppBar() {
       position="static"
       sx={{
         backgroundColor: "white",
-        color: "black",
+        color: "red",
 
         boxShadow: "none",
         "& .MuiTypography-root": {
@@ -132,16 +132,25 @@ function ResponsiveAppBar() {
               alignItems: "center",
               justifyContent: "space-between",
               width: "100%",
+              padding: "5px !important",
             }}
           >
-            <Link to="/">
+            <Link
+              to="/"
+              style={{
+                display: "flex", // Align the logo and text horizontally
+                alignItems: "center", // Vertically center the text with the logo
+                textDecoration: "none", // Remove underline from the link
+                gap: "5px", // Remove any gap between the logo and text
+                width: "auto",
+              }}
+            >
               <img
-                src="/images/Courses/logo.png"
+                src="/images/logo.jpg"
                 alt="Home"
                 style={{
-                  height: "70px",
-                  width: "150%",
-                  transition: "transform 0.2s",
+                  height: "30px", // Set a fixed height for the logo
+                  transition: "transform 0.2s", // Smooth scale transition
                 }}
                 onMouseOver={(e) =>
                   (e.currentTarget.style.transform = "scale(1.1)")
@@ -150,6 +159,28 @@ function ResponsiveAppBar() {
                   (e.currentTarget.style.transform = "scale(1)")
                 }
               />
+              <span
+                style={{
+                  fontSize: "1rem", // Default larger font size for the text
+                  fontWeight: "bold", // Make the text bold
+                  color: "black", // Set the text color to black
+                  textDecoration: "none", // Remove underline
+                  display: "inline-block", // Align text inline with the logo
+                  verticalAlign: "middle", // Vertically align text with the logo
+                }}
+              >
+                Ava
+                <span
+                  style={{
+                    fontSize: "1rem", // Match the font size for consistency
+                    fontWeight: "bold", // Make the text bold
+                    color: "blue", // Set the color of "Intern" to blue
+                    textDecoration: "none", // Ensure no underline
+                  }}
+                >
+                  Intern
+                </span>
+              </span>
             </Link>
             {/* Mobile Menu Button */}
             <IconButton
@@ -211,7 +242,8 @@ function ResponsiveAppBar() {
                     to={page.path}
                     sx={{
                       textDecoration: "none",
-                      color: "inherit",
+                      color: "blue",
+                      fontWeight: "bold",
                     }}
                   >
                     {page.name}
@@ -233,9 +265,9 @@ function ResponsiveAppBar() {
                         to={course.path}
                         sx={{
                           textDecoration: "none",
-                          color: "#000",
+                          color: "black",
                           fontWeight: "bold",
-                          fontSize: "14px",
+                          fontSize: "17px",
                         }}
                       >
                         {course.name}

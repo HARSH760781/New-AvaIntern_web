@@ -143,7 +143,7 @@ const DigitalMarketing = () => {
           "🚀 SEO (Search Engine Optimization)",
           "💼 Hands-on Real Projects",
         ]}
-        imageUrl={"Coures/DIGITAL MARKETING.png"}
+        imageUrl={"Courses/DIGITAL MARKETING.png"}
       />
 
       {/* Course Menu Navigation */}

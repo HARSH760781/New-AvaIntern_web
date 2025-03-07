@@ -1,0 +1,166 @@
+.hero-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two-column layout */
+  align-items: center;
+  gap: 20px;
+  padding: 40px;
+  max-width: 100%;
+  background: black;
+  box-sizing: border-box;
+}
+
+.hero-left,
+.hero-right {
+  width: 100%; /* Ensure both sections take full width of their respective columns */
+}
+
+.hero-left {
+  padding: 20px;
+  max-width: 100%;
+}
+
+.hero-left h2 {
+  color: white;
+  font-size: 52px;
+  font-weight: bold;
+}
+
+.hero-left p {
+  color: white;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.hero-left span {
+  color: #007bff;
+}
+
+.hero-right {
+  text-align: center;
+  width: 100%; /* Ensure the container takes full width */
+}
+
+.hero-right .swiper {
+  width: 100%;
+  max-width: 600px; /* Limit Swiper container width for larger screens */
+  height: auto; /* Allow height to adjust dynamically */
+  margin: 0 auto; /* Center the Swiper container */
+}
+
+.hero-right .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Ensure the slide takes full width */
+  height: auto; /* Allow height to adjust automatically */
+}
+
+.hero-right img {
+  width: 100%; /* Make the image fill the width of the container */
+  height: auto; /* Maintain the aspect ratio */
+  max-height: 500px; /* Limit image height for larger screens */
+  object-fit: contain; /* Ensures image fits within container without cropping */
+  border-radius: 10px;
+  transition: transform 0.8s ease-in-out;
+}
+
+.hero-right img:hover {
+  transform: scale(0.95); /* Slight zoom effect on hover */
+}
+
+/* Responsive Design */
+
+@media (max-width: 1200px) {
+  .hero-right .swiper {
+    max-width: 500px; /* Adjust Swiper width for medium screens */
+  }
+
+  .hero-right img {
+    max-height: 400px; /* Adjust image height for medium screens */
+  }
+}
+
+@media (max-width: 850px) {
+  .hero-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-left h2 {
+    font-size: 36px;
+  }
+
+  .hero-left p {
+    font-size: 16px;
+  }
+
+  .hero-right .swiper {
+    max-width: 400px; /* Adjust Swiper width for smaller screens */
+  }
+
+  .hero-right img {
+    max-height: 350px; /* Adjust image height for smaller screens */
+  }
+}
+@media (max-width: 768px) {
+  .hero-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-left h2 {
+    font-size: 36px; /* Adjust font size for smaller screens */
+  }
+
+  .hero-left p {
+    font-size: 16px; /* Adjust font size for smaller screens */
+  }
+
+  .hero-right .swiper {
+    max-width: 100%; /* Make Swiper take full width on smaller screens */
+    padding: 0 20px; /* Add some padding to prevent images from touching the edges */
+  }
+
+  .hero-right img {
+    max-height: 400px; /* Increase image height for smaller screens */
+    width: 100%; /* Ensure the image takes full width */
+    border-radius: 10px; /* Maintain border radius */
+  }
+}
+
+/* Responsive Design for Screens Below 480px */
+@media (max-width: 480px) {
+  .hero-left h2 {
+    font-size: 28px; /* Further reduce font size for very small screens */
+  }
+
+  .hero-left p {
+    font-size: 14px; /* Further reduce font size for very small screens */
+  }
+
+  .hero-right .swiper {
+    max-width: 100%; /* Swiper takes full width */
+    padding: 0 10px; /* Reduce padding for very small screens */
+  }
+
+  .hero-right img {
+    max-height: 350px; /* Further increase image height for very small screens */
+  }
+}
+
+/* Responsive Design for Screens Below 350px */
+@media (max-width: 350px) {
+  .hero-left h2 {
+    font-size: 24px; /* Smallest font size for very small screens */
+  }
+
+  .hero-left p {
+    font-size: 13px; /* Smallest font size for very small screens */
+  }
+
+  .hero-right img {
+    max-height: 300px; /* Adjust image height for the smallest screens */
+  }
+}
