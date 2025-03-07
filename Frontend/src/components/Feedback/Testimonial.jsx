@@ -2,7 +2,7 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import "./testimonial.css";
+import "./Testimonial.css";
 import { Pagination, Autoplay } from "swiper/modules";
 
 const testimonials = [
