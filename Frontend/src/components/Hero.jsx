@@ -138,7 +138,7 @@ const Hero = () => {
               reverseDirection: true, // Reverse the autoplay direction (optional)
             }}
             pagination={{ clickable: true }} // Enable clickable pagination
-            spaceBetween={10} // Space between slides
+            spaceBetween={20} // Space between slides
             slidesPerView={2} // Display one slide at a time
             grabCursor={true} // Show grab cursor for better UX
             observer={true} // Observe changes in the DOM

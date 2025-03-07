@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const axios = require("axios");
+const path = require("path");
 const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
 const crypto = require("crypto");
@@ -216,8 +217,10 @@ app.post("/create-payment-order", async (req, res) => {
   }
 });
 
+app.use(express.static(path.join(__dirname, "dist")));
+
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
+  res.sendFile(path.join(__dirname, "dist", "index.html"));
 });
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
