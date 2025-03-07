@@ -7,11 +7,13 @@ import Button from "@mui/material/Button"; // Import MUI Button
 import { FaArrowRight } from "react-icons/fa";
 // import { motion } from "framer-motion";
 import { FaPlus, FaMinus } from "react-icons/fa";
+import usePageTitle from "../Hooks/usePageTitle";
 import { ToastContainer, toast } from "react-toastify"; // Import Toastify
 import { CircularProgress } from "@mui/material"; // Import spinner
 import "react-toastify/dist/ReactToastify.css"; // Import styles for Toastify
 
 const CareerPage = () => {
+  usePageTitle();
   const [openIndex, setOpenIndex] = useState(null); // Track the open FAQ index
   const [isFormVisible, setIsFormVisible] = useState(false); // Track form visibility
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);

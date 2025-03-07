@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import usePageTitle from "../../Hooks/usePageTitle";
 import "./OurCourse.css";
 
 const ourcourses = [
@@ -106,6 +107,7 @@ const ourcourses = [
 
 const CourseComponent = () => {
   const navigate = useNavigate();
+  usePageTitle();
 
   return (
     <div className="our-courses-container">

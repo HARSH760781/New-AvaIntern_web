@@ -47,12 +47,12 @@ import PaymentFailure from "./components/Course Supporter/Course Details/Payment
 import TermsAndCondition from "./components/Privacy & Conditions/TermsAndCondition";
 import VLSI from "./components/Courses/UIUX";
 import PrivacyPolicy from "./components/Privacy & Conditions/PrivacyPolicy";
-// import Blockchain from "./components/Courses/Blockchain";
-
+import ScrollToTop from "./components/ScrollToTop";
 function App() {
   return (
     <Router>
       <AppBar />
+      <ScrollToTop />
       <Routes>
         {/* Define routes for different components */}
         <Route path="/" element={<Hero />} />
@@ -96,7 +96,6 @@ function App() {
 
         {/* You can add more routes here for other sections */}
       </Routes>
-
       <Footer />
     </Router>
   );

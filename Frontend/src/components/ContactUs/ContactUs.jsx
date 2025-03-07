@@ -8,13 +8,15 @@ import {
   FaLinkedin,
   FaChevronDown,
 } from "react-icons/fa";
-import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
+
 import { ToastContainer, toast } from "react-toastify";
 import { ClipLoader } from "react-spinners";
 import "react-toastify/dist/ReactToastify.css";
+import usePageTitle from "../Hooks/usePageTitle";
 import "./ContactUs.css";
 
 const ContactUs = () => {
+  usePageTitle();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -157,52 +159,79 @@ const ContactUs = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2 }}
         >
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="text"
-            name="mobile"
-            placeholder="Your Mobile"
-            value={formData.mobile}
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="text"
-            name="domain"
-            placeholder="Interested Domain"
-            value={formData.domain}
-            onChange={handleChange}
-            required
-          />
-          <textarea
-            name="message"
-            placeholder="Your Message"
-            value={formData.message}
-            onChange={handleChange}
-            required
-          ></textarea>
+          {/* Name */}
+          {/* Name */}
+          <div className="form-group">
+            <input
+              type="text"
+              name="name"
+              id="name"
+              required
+              value={formData.name}
+              onChange={handleChange}
+            />
+            <label htmlFor="name">Your Name</label>
+          </div>
+
+          {/* Email */}
+          <div className="form-group">
+            <input
+              type="email"
+              name="email"
+              id="email"
+              required
+              value={formData.email}
+              onChange={handleChange}
+            />
+            <label htmlFor="email">Your Email</label>
+          </div>
+
+          {/* Mobile */}
+          <div className="form-group">
+            <input
+              type="text"
+              name="mobile"
+              id="mobile"
+              required
+              value={formData.mobile}
+              onChange={handleChange}
+            />
+            <label htmlFor="mobile">Your Mobile</label>
+          </div>
+
+          {/* Domain */}
+          <div className="form-group">
+            <input
+              type="text"
+              name="domain"
+              id="domain"
+              required
+              value={formData.domain}
+              onChange={handleChange}
+            />
+            <label htmlFor="domain">Interested Domain</label>
+          </div>
+
+          {/* Message */}
+          <div className="form-group">
+            <textarea
+              name="message"
+              id="message"
+              required
+              value={formData.message}
+              onChange={handleChange}
+            />
+            <label htmlFor="message">Your Message</label>
+          </div>
+
+          {/* Submit Button */}
           <motion.button
             type="submit"
             whileHover={{ scale: 1.05 }}
-            disabled={loading} // Disable button while loading
+            disabled={loading}
           >
             {loading ? (
-              <ClipLoader size={20} color="#ffffff" /> // Show spinner while loading
+              <ClipLoader size={20} color="#ffffff" />
             ) : (
               "Send Message"
             )}
@@ -221,9 +250,8 @@ const ContactUs = () => {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-        toastStyle={{ borderRadius: "8px", fontFamily: "Arial, sans-serif" }} // Global toast styles
+        toastStyle={{ borderRadius: "8px", fontFamily: "Arial, sans-serif" }}
       />
-
       {/* FAQ Section */}
       <motion.div
         className="faq-section"

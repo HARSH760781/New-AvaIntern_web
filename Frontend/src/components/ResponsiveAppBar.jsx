@@ -268,6 +268,7 @@ function ResponsiveAppBar() {
                           color: "black",
                           fontWeight: "bold",
                           fontSize: "17px",
+                          width: "100%",
                         }}
                       >
                         {course.name}

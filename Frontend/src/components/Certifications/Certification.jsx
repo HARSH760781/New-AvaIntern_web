@@ -10,6 +10,7 @@ import {
   FaChevronUp,
 } from "react-icons/fa";
 import { Swiper, SwiperSlide } from "swiper/react";
+import usePageTitle from "../Hooks/usePageTitle";
 import {
   Autoplay,
   EffectCoverflow,
@@ -22,6 +23,7 @@ import { Link } from "react-router-dom";
 
 const CertificationPage = () => {
   // Dummy data for certificates
+  usePageTitle();
 
   const certificateData = [
     { id: 1, image: "/images/Certificate/1.jpg" },

@@ -192,7 +192,9 @@ const EnrollmentForm = () => {
     const validationErrors = validateForm();
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors); // Set errors in state
-      toast.error("Please fix the errors in the form.");
+      toast.error("Please fix the errors in the form.", {
+        background: "white",
+      });
       return;
     }
 
@@ -226,6 +228,7 @@ const EnrollmentForm = () => {
       if (result.created > 0) {
         toast.success("Redirecting to the payment...", {
           autoClose: 2000,
+          style: { background: "white", color: "black" },
           onClose: () =>
             navigate("/payment", {
               state: {
@@ -244,6 +247,7 @@ const EnrollmentForm = () => {
       console.error("Error:", error);
       toast.error(`Failed to submit form: ${error.message}`, {
         autoClose: 3000,
+        style: { background: "white", color: "black" },
       });
     } finally {
       setLoading(false);
@@ -454,7 +458,7 @@ const EnrollmentForm = () => {
             variant="contained"
             fullWidth
             disabled={loading}
-            sx={{ backgroundColor: loading ? "#ccc" : "#1976d2" }}
+            sx={{ backgroundColor: loading ? "red " : "#1976d2" }}
           >
             {loading ? <CircularProgress size={24} /> : "Submit"}
           </Button>

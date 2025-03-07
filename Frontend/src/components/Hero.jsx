@@ -25,9 +25,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-cards";
 import { Autoplay, EffectCards, Navigation, Pagination } from "swiper/modules";
+import usePageTitle from "./Hooks/usePageTitle";
 
 const Hero = () => {
+  usePageTitle();
   const [bootcampImages, setBootcampImages] = useState([]);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -61,7 +64,12 @@ const Hero = () => {
 
     fetchData();
   }, []);
-  // console.log(bootcampImages);
+
+  const handleImageLoad = () => {
+    if (bootcampImages.length > 0) {
+      setImagesLoaded(true);
+    }
+  };
   return (
     <>
       <div className="hero-container">
@@ -120,13 +128,6 @@ const Hero = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, type: "spring", stiffness: 120 }}
         >
-          {/* <motion.img
-            src="/images/hero_image.jpg"
-            alt="Hero"
-            initial={{ scale: 0.8 }}
-            animate={{ scale: 1 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-          /> */}
           <Swiper
             effect={"cards"} // Use the 'cards' effect
             modules={[Autoplay, Pagination, EffectCards]} // Include necessary modules
@@ -140,11 +141,22 @@ const Hero = () => {
             spaceBetween={10} // Space between slides
             slidesPerView={2} // Display one slide at a time
             grabCursor={true} // Show grab cursor for better UX
+            observer={true} // Observe changes in the DOM
+            observeParents={true} // Observe parent elements for changes
           >
             {bootcampImages.length > 0 ? (
               bootcampImages.map((image, index) => (
                 <SwiperSlide key={index} className="swiper-slide1">
-                  <img src={image} alt={`Bootcamp ${index + 1}`} />
+                  <img
+                    src={image}
+                    alt={`Bootcamp ${index + 1}`}
+                    onLoad={handleImageLoad} // Add this line
+                    style={{
+                      width: "100%",
+                      height: "auto",
+                      objectFit: "cover",
+                    }}
+                  />
                 </SwiperSlide>
               ))
             ) : (

@@ -113,6 +113,26 @@
   .hero-left h2 {
     font-size: 28px; /* Further reduce font size for very small screens */
   }
+  /* .hero-right{
+    overflow: hidden !important;
+    width: 90% !important;
+  } */
+  .hero-right .swiper .swiper-cards{
+    overflow: hidden !important;
+  }
+  swiper-slide1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 10px; /* Optional: Add rounded corners */
+  }
+  
+  .swiper-slide1 img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Maintain aspect ratio */
+  }
 
   .hero-left p {
     font-size: 14px; /* Further reduce font size for very small screens */

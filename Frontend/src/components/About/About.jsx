@@ -5,6 +5,7 @@ import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { FaBullseye, FaLightbulb, FaCogs } from "react-icons/fa";
 import { Swiper, SwiperSlide } from "swiper/react";
+import usePageTitle from "../Hooks/usePageTitle";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -19,6 +20,7 @@ import {
 import "./About.css";
 
 const About = () => {
+  usePageTitle();
   const navigate = useNavigate();
   const [selectedTab, setSelectedTab] = useState("goal");
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.21 });
