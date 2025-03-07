@@ -12,8 +12,6 @@ const tech_courses = [
 const Non_tech_course = [
   { id: 1, title: "HR Management", image: "/images/hr-management.png" },
   { id: 2, title: "Embedded System", image: "/images/embbeded.png" },
-  { id: 3, title: "Freelancing", image: "/images/freelancing1.png" },
-  { id: 4, title: "Mentorship", image: "/images/mentorship1.png" },
   { id: 5, title: "Finance", image: "/images/finance.png" },
   { id: 6, title: "VLSI", image: "/images/vlsi.png" },
   { id: 7, title: "AutoCAD", image: "/images/cad.png" },

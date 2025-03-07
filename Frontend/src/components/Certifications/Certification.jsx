@@ -101,10 +101,10 @@ const CertificationPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       const API_KEY = import.meta.env.VITE_API_KEY; // Replace with your API key
-      const SHEET_ID = import.meta.env.SHEET_ID; // Replace with your Google Sheet ID
+      const SHEET_ID = import.meta.env.VITE_SHEET_ID; // Replace with your Google Sheet ID
       const RANGE = "Sheet1!A2:D"; // Adjust the range to match your sheet
       const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${RANGE}?key=${API_KEY}`;
-
+      // console.log(url);
       try {
         const response = await fetch(url);
 
@@ -120,10 +120,12 @@ const CertificationPage = () => {
           throw new Error("No data found in the sheet.");
         }
 
+        // console.log(data.values);
         const imageUrls = data.values.map((row) => row[2]); // Extract image URLs
         const mentorData = data.values.map((row) => row[3]); // Extract image URLs
         const mentorUrls = mentorData.map((item) => item.split(","));
-        // console.log(mentorUrls);
+        // console.log(imageUrls);
+
         setImages(imageUrls);
         setMentors(mentorUrls);
 
