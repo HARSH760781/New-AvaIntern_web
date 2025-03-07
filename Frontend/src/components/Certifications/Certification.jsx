@@ -55,7 +55,7 @@ const CertificationPage = () => {
       id: 3,
       question: "Are the courses self-paced?",
       answer:
-        "Yes, most courses are self-paced, allowing you to learn at your convenience.",
+        "Yes,But all courses are available in both mode Live & self paced.",
     },
     {
       id: 4,
@@ -319,6 +319,31 @@ const CertificationPage = () => {
         </div>
       </motion.div>
 
+      {/* Instructor Section */}
+      <motion.div
+        className="instructor-section"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 1.6 }}
+      >
+        <h2>Meet Our Instructors</h2>
+        <div className="instructor-grid">
+          {mentors
+            .filter((image) => image)
+            .map((instructor, index) => (
+              <div key={index} className="instructor-card">
+                <img
+                  src={instructor[0]}
+                  alt={instructor[1]}
+                  className="instructor-image"
+                />
+                <h3>{instructor[1]}</h3>
+                <p>{instructor[2]}</p>
+              </div>
+            ))}
+        </div>
+      </motion.div>
+
       {/* FAQ Section */}
       <motion.div
         className="faq-section"
@@ -347,31 +372,6 @@ const CertificationPage = () => {
               )}
             </div>
           ))}
-        </div>
-      </motion.div>
-
-      {/* Instructor Section */}
-      <motion.div
-        className="instructor-section"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 1.6 }}
-      >
-        <h2>Meet Our Instructors</h2>
-        <div className="instructor-grid">
-          {mentors
-            .filter((image) => image)
-            .map((instructor, index) => (
-              <div key={index} className="instructor-card">
-                <img
-                  src={instructor[0]}
-                  alt={instructor[1]}
-                  className="instructor-image"
-                />
-                <h3>{instructor[1]}</h3>
-                <p>{instructor[2]}</p>
-              </div>
-            ))}
         </div>
       </motion.div>
 

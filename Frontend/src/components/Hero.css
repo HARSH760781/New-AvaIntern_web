@@ -78,6 +78,9 @@
   .hero-right img {
     max-height: 400px; /* Adjust image height for medium screens */
   }
+  .hero-container{
+    padding: 0;
+  }
 }
 
 @media (max-width: 850px) {
@@ -90,7 +93,9 @@
   .hero-left h2 {
     font-size: 36px;
   }
-
+  .hero-left{
+    text-align: center !important;
+  }
   .hero-left p {
     font-size: 16px;
   }
@@ -103,33 +108,6 @@
     max-height: 350px; /* Adjust image height for smaller screens */
   }
 }
-@media (max-width: 768px) {
-  .hero-container {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .hero-left h2 {
-    font-size: 36px; /* Adjust font size for smaller screens */
-  }
-
-  .hero-left p {
-    font-size: 16px; /* Adjust font size for smaller screens */
-  }
-
-  .hero-right .swiper {
-    max-width: 100%; /* Make Swiper take full width on smaller screens */
-    padding: 0 20px; /* Add some padding to prevent images from touching the edges */
-  }
-
-  .hero-right img {
-    max-height: 400px; /* Increase image height for smaller screens */
-    width: 100%; /* Ensure the image takes full width */
-    border-radius: 10px; /* Maintain border radius */
-  }
-}
-
 /* Responsive Design for Screens Below 480px */
 @media (max-width: 480px) {
   .hero-left h2 {
@@ -145,8 +123,14 @@
     padding: 0 10px; /* Reduce padding for very small screens */
   }
 
+    .swiper-slide1{
+      width: 200px !important;
+    }
   .hero-right img {
-    max-height: 350px; /* Further increase image height for very small screens */
+    max-height: 400px; /* Increase image height for very small screens */
+    width: 200px !important; /* Ensure the image takes full width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Maintain border radius */
   }
 }
 
@@ -161,6 +145,9 @@
   }
 
   .hero-right img {
-    max-height: 300px; /* Adjust image height for the smallest screens */
+    max-height: 350px; /* Adjust image height for the smallest screens */
+  }
+  .hero-right .swiper-wrapper{
+    transform: translateX(40.5px) !important;
   }
 }

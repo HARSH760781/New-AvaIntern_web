@@ -158,7 +158,9 @@ const DataAnalytics = () => {
             Data analytics courses focus on equipping individuals with the tools
             and techniques to extract meaningful insights from data,
           </p>
-          <button className="explore-btn">Explore Course</button>
+          <Link to="/courses">
+            <button className="explore-btn">Explore Course</button>
+          </Link>
         </div>
       </div>
 

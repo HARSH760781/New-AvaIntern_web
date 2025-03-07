@@ -154,7 +154,9 @@ const Embedded = () => {
             systems, with a special focus on system testing. Students will learn
             the fundamentals of embedded systems
           </p>
-          <button className="explore-btn">Explore Course</button>
+          <Link to="/courses">
+            <button className="explore-btn">Explore Course</button>
+          </Link>
         </div>
       </div>
 

@@ -172,7 +172,9 @@ const WebDevelopment = () => {
             React, and Node.js. <br />
             Build dynamic websites and deploy them.
           </p>
-          <button className="explore-btn">Explore Course</button>
+          <Link to="/courses">
+            <button className="explore-btn">Explore Course</button>
+          </Link>
         </div>
       </div>
 

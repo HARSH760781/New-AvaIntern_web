@@ -1,4 +1,6 @@
 import React from "react";
+import { FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import "./Footer.css";
 
 const Footer = () => {
@@ -19,16 +21,22 @@ const Footer = () => {
           <h3>Quick Links</h3>
           <ul>
             <li>
-              <a href="/">Home</a>
+              <Link to="/">Home</Link> {/* Use Link instead of <a> */}
             </li>
             <li>
-              <a href="/courses">Courses</a>
+              <Link to="/courses">Courses</Link>
             </li>
             <li>
-              <a href="/about">About Us</a>
+              <Link to="/about">About Us</Link>
             </li>
             <li>
-              <a href="/contact">Contact</a>
+              <Link to="/contact">Contact</Link>
+            </li>
+            <li>
+              <Link to="/privacy">Privacy Policy</Link>
+            </li>
+            <li>
+              <Link to="/terms_and_Condition">Terms & Condition</Link>
             </li>
           </ul>
         </div>
@@ -38,8 +46,12 @@ const Footer = () => {
           <h3>Contact Us</h3>
           <p>Email: support@avaintern.com</p>
           <p>Phone: +91 9606670754</p>
-          <p>
-            Address: Banglore,Neraluru SMS complex 1st floor , Karnataka,562107
+          <h3>Address:</h3>
+          <p className="address">
+            <br /> <b>Branch1 :-</b> Banglore, Neraluru SMS complex 1st floor,
+            Karnataka, 562107
+            <br /> <b>Branch2 :-</b> RTC colony, Srinivas Nagar, Madhurwada,
+            Vishakhapatnams
           </p>
         </div>
 
@@ -53,7 +65,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Instagram
+                <FaInstagram />
               </a>
             </li>
             <li>
@@ -62,7 +74,16 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                LinkedIn
+                <FaLinkedin />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://youtube.com/@avainternedutechpvt.ltd.?si=ttnnLsrvYf0n3JI5"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaYoutube />
               </a>
             </li>
           </ul>

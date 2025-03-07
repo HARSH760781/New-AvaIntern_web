@@ -8,6 +8,10 @@ import {
   FaLinkedin,
   FaChevronDown,
 } from "react-icons/fa";
+import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
+import { ToastContainer, toast } from "react-toastify";
+import { ClipLoader } from "react-spinners";
+import "react-toastify/dist/ReactToastify.css";
 import "./ContactUs.css";
 
 const ContactUs = () => {
@@ -19,7 +23,7 @@ const ContactUs = () => {
     mobile: "",
   });
 
-  const [status, setStatus] = useState("");
+  const [loading, setLoading] = useState(false); // State for loading spinner
   const [openFaqIndex, setOpenFaqIndex] = useState(null); // Track the currently open FAQ index
 
   const handleChange = (e) => {
@@ -27,10 +31,10 @@ const ContactUs = () => {
   };
 
   const backend_url = import.meta.env.VITE_BACKEND_URL;
-  // console.log(`${backend_url}/submit-form`);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus("Sending...");
+    setLoading(true); // Show loading spinner
 
     try {
       const response = await fetch(`${backend_url}/submit-form`, {
@@ -41,7 +45,23 @@ const ContactUs = () => {
 
       const result = await response.json();
       if (result.result === "success") {
-        setStatus("Message sent successfully!");
+        toast.success(
+          <div>
+            <FaCheckCircle style={{ marginRight: "10px" }} />{" "}
+            {/* Success icon */}
+            Message sent successfully!
+          </div>,
+          {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            style: { background: "#4caf50", color: "white" },
+          }
+        );
+
         setFormData({
           name: "",
           email: "",
@@ -50,14 +70,37 @@ const ContactUs = () => {
           domain: "",
         });
       } else {
-        setStatus("Failed to send message: " + result.message);
+        toast.error(
+          <div>
+            <FaTimesCircle style={{ marginRight: "10px" }} /> {/* Error icon */}
+            Failed to send message. Please try again later.
+          </div>,
+          {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            style: { background: "#f44336", color: "white" },
+          }
+        );
       }
     } catch (error) {
-      setStatus("Failed to send message.");
+      toast.error("Failed to send message. Please try again later.", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        style: { background: "#f44336", color: "white" }, // Custom error style
+      });
       console.error("Error:", error);
+    } finally {
+      setLoading(false); // Hide loading spinner
     }
   };
-
   const toggleFAQ = (index) => {
     // If the clicked FAQ is already open, close it. Otherwise, open the clicked FAQ.
     setOpenFaqIndex((prevIndex) => (prevIndex === index ? null : index));
@@ -153,13 +196,33 @@ const ContactUs = () => {
             onChange={handleChange}
             required
           ></textarea>
-          <motion.button type="submit" whileHover={{ scale: 1.05 }}>
-            Send Message
+          <motion.button
+            type="submit"
+            whileHover={{ scale: 1.05 }}
+            disabled={loading} // Disable button while loading
+          >
+            {loading ? (
+              <ClipLoader size={20} color="#ffffff" /> // Show spinner while loading
+            ) : (
+              "Send Message"
+            )}
           </motion.button>
         </motion.form>
       </div>
 
-      {status && <p className="status-message">{status}</p>}
+      {/* Toast Container */}
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        toastStyle={{ borderRadius: "8px", fontFamily: "Arial, sans-serif" }} // Global toast styles
+      />
 
       {/* FAQ Section */}
       <motion.div

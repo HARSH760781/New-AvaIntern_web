@@ -139,7 +139,9 @@ const AutoCad = () => {
             AutoCAD courses focus on the use of data to drive business decisions
             and strategies.
           </p>
-          <button className="explore-btn">Explore Course</button>
+          <Link to="/courses">
+            <button className="explore-btn">Explore Course</button>
+          </Link>
         </div>
       </div>
 

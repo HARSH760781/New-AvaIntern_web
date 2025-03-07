@@ -86,7 +86,7 @@ const courseDetails = {
   "digital-marketing": {
     description:
       "Master SEO, social media marketing, and performance advertising.",
-    image: "/images/Courses/digital-marketing.jpg",
+    image: "/images/Courses/DIGITAL MARKETING.png",
     price: "Rs 11999",
   },
   hr: {
@@ -199,8 +199,8 @@ const EnrollmentForm = () => {
     setLoading(true);
 
     // Replace this with your SheetDB API endpoint
-    const url = "https://sheetdb.io/api/v1/zny3zxgzfooyk";
-
+    // const url = "https://sheetdb.io/api/v1/zny3zxgzfooyk";
+    const url = import.meta.env.VITE_SHEETDB_URL;
     try {
       const response = await fetch(url, {
         method: "POST",

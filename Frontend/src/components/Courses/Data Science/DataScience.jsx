@@ -182,7 +182,9 @@ const DataScience = () => {
             gain useful insights from data for various decisions is an important
             factor in harnessing the potential of data.
           </p>
-          <button className="explore-btn">Explore Course</button>
+          <Link to="/courses">
+            <button className="explore-btn">Explore Course</button>
+          </Link>
         </div>
       </div>
 

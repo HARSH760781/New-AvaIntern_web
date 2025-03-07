@@ -129,10 +129,7 @@ const About = () => {
       answer:
         "Absolutely! We offer job placement support, resume building, and interview preparation.",
     },
-    {
-      question: "📖 Do you offer free courses?",
-      answer: "Yes, we have free beginner courses in multiple domains.",
-    },
+
     {
       question: "💰 What are the payment options?",
       answer:
@@ -140,7 +137,7 @@ const About = () => {
     },
     {
       question: "🔄 Can I get a refund if I'm not satisfied?",
-      answer: "Our company works on no-refund policy.",
+      answer: "No , Our company works on no-refund policy.",
     },
     {
       question: "📅 How often are new courses added?",

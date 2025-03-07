@@ -11,7 +11,7 @@ import CourseDetails from "../Course Supporter/Course Details/CourseDetails";
 import CourseHeader from "../Course Supporter/Course Header/CourseHeader";
 // import { GiArtificialIntelligence } from "react-icons/gi";
 
-const ArtificialIntelligence = () => {
+const VLSI = () => {
   const [showShareOptions, setShowShareOptions] = useState(false);
   const [openSections, setOpenSections] = useState({});
   const courseUrl = window.location.href;
@@ -32,8 +32,8 @@ const ArtificialIntelligence = () => {
   const handleNativeShare = () => {
     if (navigator.share) {
       navigator.share({
-        title: "Artificial Intelligence Course",
-        text: "Check out this Artificial Intelligence course!",
+        title: "UI/UX Course",
+        text: "Check out this UI/UX course!",
         url: courseUrl,
       });
     } else {
@@ -42,131 +42,117 @@ const ArtificialIntelligence = () => {
   };
   const curriculumData = [
     {
-      title: "💡 Introduction of Artificial Intelligence",
+      title: "💡 Introduction to UI-UX Design",
       topics: [
-        "What is Artificial Intelligence?",
-        "Historical Overview of AI",
-        "AI Applications",
+        "Overview of UI-UX Design",
+        "Principles of Design",
+        "The Role of UI-UX Designer",
       ],
     },
     {
-      title: "💡Mathematics for AI",
+      title: "💡 User Research and Analysis",
       topics: [
-        "Ethical Considerations in AI",
-        "Linear Algebra",
-        "Probablity and Statistics",
+        "UX Research Methods",
+        "The Design Thinking Process",
+        "Understanding User Needs",
       ],
     },
     {
-      title: "💡Machine Learning",
+      title: "💡 UI Design Fundamentals",
+      topics: ["Persona Development", "User Journey Mapping", "Card Sorting"],
+    },
+    {
+      title: "💡UI Design Tools and Techniques",
       topics: [
-        "Calculus & Optimization",
-        "Supervised Learning (Regression,Classification)",
-        "Unsupervised Learning (Clustering,Dimensionality,Reduction)",
+        "Surveys and Questionnaires",
+        "Visual Design Principles",
+        "Color Theory & Typography",
       ],
     },
     {
-      title: "💡Natural Language Processing",
+      title: "💡 Interaction Design and Animation",
       topics: [
-        "Semi-Supervised Learning",
-        "Reinforcement Learning",
-        "ASSESSMENT-1 & Quiz",
+        "Layout Design",
+        "Designing for Accessibility",
+        "Design Software Overview (Sketch, Figma, Adobe XD)",
       ],
     },
     {
-      title: "💡 Computer Vision",
+      title: "💡UX Design and Testing",
       topics: [
-        "Decision Trees,Random Forest",
-        "Gradient Boosting,Neural Networks",
-        "Deep Learning",
-        "Tokenization,Stemming and Lenmatization",
+        "Wireframing and Prototyping",
+        "Creating Interactive Mockups",
+        "Design Handoff to Developers",
       ],
     },
     {
-      title: "💡 Robotics",
+      title: "💡Design Systems and UI Kits",
       topics: [
-        "Sentiment Analysis",
-        "Named Entity Recognition",
-        "Assignment & Quiz-2",
+        "Interaction Design Principles",
+        "Creating Micro-interactions",
+        "Animation Techniques",
       ],
     },
     {
-      title: "💡AI Ethics and Future Directions",
+      title: "💡 Final Project & Professional Development",
       topics: [
-        "Machine Translation",
-        "Language Models and Pretrained Models",
-        "Text Classification , Text Geneation",
+        "Designing for Mobile and Responsive Web",
+        "Usability Testing & Heuristic Evaluation",
+        "ASSESSMENT & QUIZ - 2",
+        "A/B Testing",
       ],
     },
     {
-      title: "💡 Final Project Part-1",
-      topics: [
-        "Image Processing & Image Segmentation",
-        "Object Detection",
-        "Convolutional Neural Networks (CNNs)",
-        "Transfer Learning",
-      ],
-    },
-    {
-      title: "💡 Final Project Part-2",
+      title: "💡  Final Project Part-2",
       topics: [
         "Project Assignment",
-        "Generative Adversarial Networks (GANs)",
-        "Robotic Systems",
+        "Designing for Scalability",
+        "Collaborating with Developers",
       ],
     },
     {
       title: "💡  Final Project Part-3",
       topics: [
-        "Robot Localization and Mapping",
-        "Robot Perception",
-        "Path Planning and Navigation",
+        "Creating UI Kits and Design Systems",
+        "Component-Based Design",
+        "Atomic Design Principles",
       ],
     },
     {
       title: "💡  Final Project Part-4",
       topics: [
-        " Final Project Part-4",
-        "Transparency and Interpretability",
+        "Building a Portfolio",
+        "Freelance vs Agency vs In-House",
         "Project Review",
-      ],
-    },
-    {
-      title: "💡 Final Project Part-5",
-      topics: [
-        "Legal and Social implications of AI",
-        "The future of AI and its impact on Society",
-        "Project Submission",
       ],
     },
   ];
   const scheduleData = [
-    { week: "Week 1-4", topic: " Introduction to AI" },
-    { week: "Week 5-8", topic: "Machine Learning Foundations" },
-    { week: "Week 9-10", topic: "Deep Learning and Neural Networks" },
-    { week: "Week 11-12", topic: "Advanced Topics and Projects" },
+    { week: "Week 1-4", topic: " Introduction to UI/UX" },
+    { week: "Week 5-8", topic: "Core UI/UX Techniques" },
+    { week: "Week 9-10", topic: "Advanced UI/UX Techniques" },
+    { week: "Week 11-12", topic: "Practical Applications and Projects" },
   ];
 
   return (
     <div className="web-dev-container">
       {/* Header Section */}
       <CourseHeader
-        title="Artificial Intelligence"
+        title="UI/UX"
         breadcrumbs={[
           { label: "Home", link: "/" },
           { label: "Courses", link: "/courses" },
-          { label: "Artificial Intelligence" },
+          { label: "UI/UX" },
         ]}
       />
 
       {/* Course Content Section */}
       <div className="course-content">
         <div className="course-text">
-          <h2>About Artificial Intelligence</h2>
+          <h2>About UI/UX</h2>
           <p>
-            An AI (Artificial Intelligence) course typically covers a wide range
-            of topics related to the theory, algorithms, and applications of
-            artificial intelligence..
+            A UI-UX design course typically focuses on the principles and
+            practices of user interface (UI) and user experience (UX) design.
           </p>
           <Link to="/courses">
             <button className="explore-btn">Explore Course</button>
@@ -177,15 +163,15 @@ const ArtificialIntelligence = () => {
       {/* Course Details Section */}
       <CourseDetails
         courseUrl={courseUrl}
-        title="Artificial "
-        subtitle="Intelligence"
-        description="🤖 A Simple Guide to the World of Artificial Intelligence ✨"
+        title="UI/"
+        subtitle="UX"
+        description="Transforming Ideas into Intuitive Experiences ✨"
         keyPoints={[
-          "🔥 Machine Learning (ML) & Robotics",
-          "🚀 Learn Natural Language Processing (NLP)",
+          "🔥 UI/UX (ML) ",
+          "🚀 Learn UI/UX Algorithms",
           "💼 Hands-on Real Projects",
         ]}
-        imageUrl={"Courses/Artificial INTELLIGENCE.png"}
+        imageUrl={"Courses/VLSI.png"}
       />
 
       {/* Course Menu Navigation */}
@@ -214,18 +200,17 @@ const ArtificialIntelligence = () => {
       <div className={`tab-content ${activeTab}`}>
         {activeTab === "overview" && (
           <div className="tab-panel">
-            <h2>Welcome to Avaintern :handshake:</h2>
+            <h2>Welcome to Avaintern 🤝</h2>
             <p className="tagline">
-              "Explore the fascinating realm of AI, gain essential insights, and
-              understand the fundamentals that drive intelligent systems in
+              "Explore the fascinating realm of UI/UX, gain essential insights,
+              and understand the fundamentals that drive intelligent systems in
               today's innovative world."
             </p>
-
             <h3>Why Choose Us?</h3>
             <ul>
               <li>
                 🚀 <strong>Comprehensive Curriculum :</strong> "Industry-aligned
-                syllabus integrating core principles and applications of AI. "
+                syllabus integrating core principles and applications. "
               </li>
               <li>
                 🛠️ <strong>Hands-on Learning :</strong> Work on real-world
@@ -252,28 +237,30 @@ const ArtificialIntelligence = () => {
                 experience with internship programs.
               </li>
             </ul>
-
-            <h3>What is Artificial Intelligence?</h3>
+            <h3>What is UI/UX?</h3>{" "}
             <p>
-              Artificial Intelligence (AI) is a branch of computer science that
-              focuses on creating intelligent machines capable of performing
-              tasks that typically require human intelligence.
-              <strong>Machine Learning</strong> is a subset of AI that enables
-              machines to learn from data,{" "}
-              <strong>Natural Language Processing (NLP)</strong> allows them to
-              understand and interact using human language, and{" "}
-              <strong>Computer Vision</strong> enables them to interpret and
-              process visual information. This combination makes AI a
-              transformative technology, offering automation, efficiency, and
-              new capabilities across various industries.
-            </p>
+              {" "}
+              UI/UX design focuses on creating intuitive and engaging user
+              interfaces (UI) and user experiences (UX) for digital products and
+              services. UI design involves the visual aspects of a product,
+              including layout, colors, typography, and interactive elements,
+              while UX design emphasizes the overall feel and usability of the
+              product, ensuring a seamless and enjoyable experience for users.{" "}
+              <strong>Wireframing</strong> is used to create basic layouts and
+              structures, <strong>prototyping</strong> allows designers to build
+              interactive models for testing, and <strong>user research</strong>{" "}
+              helps understand user needs and behaviors. Effective UI/UX design
+              is crucial for creating products that are not only functional but
+              also delightful to use.{" "}
+            </p>{" "}
             <p>
-              🚀 Exciting News! Join Our AI Mastery Program 🤖🌟 Embark on an
-              immersive journey into the cutting-edge world of artificial
-              intelligence with our comprehensive AI Training. This program
-              offers hands-on experience, practical projects, and expert
-              mentorship to elevate your AI skills to the next level. Ready to
-              unlock the power of AI? Enroll now and transform your future! 🌐💡
+              {" "}
+              🚀 Exciting News! Join Our UI/UX Mastery Program 🎨🌟 Embark on an
+              immersive journey into the world of UI/UX with our comprehensive
+              design training. This program offers hands-on experience,
+              practical projects, and expert mentorship to elevate your UI/UX
+              skills to the next level. Ready to unlock the power of design?
+              Enroll now and transform your future! 🌐💡{" "}
             </p>
           </div>
         )}
@@ -319,4 +306,4 @@ const ArtificialIntelligence = () => {
   );
 };
 
-export default ArtificialIntelligence;
+export default VLSI;

@@ -97,7 +97,9 @@ const AppDevelopment = () => {
             Learn mobile app development with React Native and Flutter. Build
             cross-platform apps with real-world projects.
           </p>
-          <button className="explore-btn">Explore Course</button>
+          <Link to="/courses">
+            <button className="explore-btn">Explore Course</button>
+          </Link>
         </div>
       </div>
 

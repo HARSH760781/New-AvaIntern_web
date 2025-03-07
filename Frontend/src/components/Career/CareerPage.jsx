@@ -7,9 +7,57 @@ import Button from "@mui/material/Button"; // Import MUI Button
 import { FaArrowRight } from "react-icons/fa";
 // import { motion } from "framer-motion";
 import { FaPlus, FaMinus } from "react-icons/fa";
+import { ToastContainer, toast } from "react-toastify"; // Import Toastify
+import { CircularProgress } from "@mui/material"; // Import spinner
+import "react-toastify/dist/ReactToastify.css"; // Import styles for Toastify
 
 const CareerPage = () => {
   const [openIndex, setOpenIndex] = useState(null); // Track the open FAQ index
+  const [isFormVisible, setIsFormVisible] = useState(false); // Track form visibility
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    mobile: "",
+    domain: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true); // Show loading spinner
+
+    // Simulate form submission (2-second delay)
+    setTimeout(() => {
+      setLoading(false); // Hide loading spinner
+      toast.success("Your application has been submitted successfully!", {
+        position: "top-right", // Position of the toast
+        autoClose: 3000, // Auto-close after 3 seconds
+        hideProgressBar: false, // Show progress bar
+        closeOnClick: true, // Close on click
+        pauseOnHover: true, // Pause on hover
+        draggable: true, // Allow dragging
+        style: {
+          background: "white", // Green background for success
+          color: "black", // White text
+          borderRadius: "8px", // Rounded corners
+          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)", // Subtle shadow
+          fontSize: "14px", // Font size
+          padding: "12px 20px", // Padding
+        },
+      }); // Show success toast
+      setFormData({ name: "", email: "", mobile: "", domain: "", message: "" }); // Clear form data
+    }, 2000);
+  };
 
   const careerOptions = [
     {
@@ -35,7 +83,7 @@ const CareerPage = () => {
     },
     {
       question: "📌 Is there a fee for the training?",
-      answer: "Some courses are free; others may have a minimal fee.",
+      answer: "Yes, you can go in courses section for more detail.",
     },
     {
       question: "📌 What is the duration of the programs?",
@@ -75,22 +123,138 @@ const CareerPage = () => {
             <Button
               variant="contained"
               color="secondary"
-              component={Link} // Use component prop to render as Link
-              to="/courses" // Specify the route to redirect to
+              onClick={() => {
+                setIsFormVisible(true); // Show the form
+                setIsButtonDisabled(true); // Disable the button
+              }}
+              disabled={isButtonDisabled} // Disable button when clicked
               sx={{
                 my: 2,
                 mx: 1,
                 py: 1.5,
                 font: "100%",
                 fontWeight: "bold",
-                "&:hover": { background: "#fdd017", color: "black" }, // Hover styles
+                background: isButtonDisabled ? "#d3d3d3" : "blue",
+                color: isButtonDisabled ? "#a9a9a9" : "white",
+                "&:hover": {
+                  background: isButtonDisabled ? "#d3d3d3" : "blue", // Hover effect when disabled
+                  color: isButtonDisabled ? "#a9a9a9" : "white", // Hover effect when disabled
+                },
               }}
             >
-              Apply Now <FaArrowRight style={{ marginLeft: "8px" }} />{" "}
-              {/* Add an icon */}
+              Apply Now <FaArrowRight style={{ marginLeft: "8px" }} />
             </Button>
           </motion.div>
         </motion.div>
+
+        {/* Apply Form (This will appear when 'Apply Now' is clicked) */}
+        {isFormVisible && (
+          <motion.div
+            className="apply-form"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 20 }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2>Application Form</h2>
+            <form onSubmit={handleSubmit}>
+              <div className="form-field">
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  required
+                  placeholder=" "
+                  title="Please enter your name" // Custom validation message
+                />
+                <label htmlFor="name">Name*</label>
+              </div>
+
+              <div className="form-field">
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  required
+                  placeholder=" "
+                  title="Please enter a valid email address" // Custom validation message
+                />
+                <label htmlFor="email">Email*</label>
+              </div>
+
+              <div className="form-field">
+                <input
+                  type="text"
+                  name="mobile"
+                  id="mobile"
+                  value={formData.mobile}
+                  onChange={handleInputChange}
+                  required
+                  placeholder=" "
+                  title="Please enter your mobile number" // Custom validation message
+                />
+                <label htmlFor="mobile">Mobile*</label>
+              </div>
+
+              <div className="form-field">
+                <input
+                  type="text"
+                  name="domain"
+                  id="domain"
+                  value={formData.domain}
+                  onChange={handleInputChange}
+                  required
+                  placeholder=" "
+                  title="Please enter the domain you're interested in" // Custom validation message
+                />
+                <label htmlFor="domain">Interested Domain*</label>
+              </div>
+
+              <div className="form-field">
+                <textarea
+                  name="message"
+                  id="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  required
+                  placeholder=" "
+                  title="Please enter your message" // Custom validation message
+                />
+                <label htmlFor="message">Message*</label>
+              </div>
+
+              <div className="form-field">
+                <Button
+                  type="submit"
+                  variant="contained"
+                  color="secondary"
+                  sx={{
+                    py: 1.5,
+                    fontWeight: "bold",
+                    mt: 2,
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    background: "blue",
+                  }}
+                >
+                  {loading ? (
+                    <CircularProgress size={24} sx={{ color: "white" }} />
+                  ) : (
+                    "Submit"
+                  )}
+                </Button>
+              </div>
+            </form>
+          </motion.div>
+        )}
+
+        {/* Toast Container */}
+        <ToastContainer />
 
         {/* Career Opportunities */}
         <motion.div

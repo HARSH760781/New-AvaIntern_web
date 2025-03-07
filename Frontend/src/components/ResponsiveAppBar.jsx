@@ -97,12 +97,12 @@ function ResponsiveAppBar() {
       position="static"
       sx={{
         backgroundColor: "white",
-        color: "red",
+        color: "blue",
 
         boxShadow: "none",
         "& .MuiTypography-root": {
           fontWeight: "bold",
-          background: "red",
+          background: "blue",
         },
         width: "100%",
         display: "flex",
@@ -232,9 +232,8 @@ function ResponsiveAppBar() {
                     background:
                       "rgba(255, 255, 255, 0.25)" /* Semi-transparent white */,
                     backdropFilter: "blur(10px)",
-                    // boxShadow: "rgba(0,0,0,0.2) 0px 8px 20px",
-                    // borderRadius: "12px",
                     fontSize: "100%",
+                    width: "100%",
                   }}
                 >
                   <Typography
@@ -244,6 +243,7 @@ function ResponsiveAppBar() {
                       textDecoration: "none",
                       color: "blue",
                       fontWeight: "bold",
+                      width: "100%",
                     }}
                   >
                     {page.name}
@@ -287,7 +287,7 @@ function ResponsiveAppBar() {
               justifyContent: "center",
             }}
           >
-            {pages.map((page) => (
+            {pages.map((page, index) => (
               <Button
                 key={page.name}
                 onClick={
@@ -303,16 +303,19 @@ function ResponsiveAppBar() {
                   display: "flex",
                   background: "white",
                   width: "100%",
-                  // mx: 1.5, // Increased spacing
-                  mx: "0.5",
-                  minWidth: "110px", // Ensures proper width for long texts like "Contact Us"
-                  // padding: "10px 20px", // Better spacing inside the button
+                  margin: "auto 5px",
+                  mx: index === 0 || index === 1 ? "0.1" : "0.3", // Reduce margin between "Home" and "About"
+                  minWidth: "110px",
                   fontSize: "14px",
                   "&:hover": {
-                    transform: "scale(1.1)",
+                    transform: "scale(1.05)",
                     color: "black",
                     fontWeight: "bolder",
+                    transition: "transform 0.2s ease",
                   },
+                  overflow: "hidden",
+                  position: page.name === "Home" ? "relative" : "initial",
+                  left: page.name === "Home" ? "30px" : "initial", // Move the "Home" button 30px closer to "About"
                 }}
                 endIcon={
                   page.name === "Courses" ? <ArrowDropDownSharpIcon /> : null

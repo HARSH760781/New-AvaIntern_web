@@ -1,0 +1,77 @@
+/* General Styling */
+.terms-container {
+  font-family: 'Times New Roman', Times, serif;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  color: #333;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.terms-content {
+  padding: 30px;
+  line-height: 1.8;
+}
+
+h1 {
+  text-align: center;
+  font-size: 32px;
+  color: #1a1a1a;
+  margin-bottom: 30px;
+}
+
+.terms-section {
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 22px;
+  color: #003366;
+  border-bottom: 2px solid #003366;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+h3 {
+  font-size: 18px;
+  color: #005082;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+ul {
+  /* padding-left: 20px; */
+  list-style-type: disc;
+  margin-bottom: 10px;
+}
+
+strong.highlight {
+  font-weight: bold;
+  color: #005082;
+}
+
+a.highlight-link {
+  color: #005082;
+  text-decoration: none;
+}
+
+a.highlight-link:hover {
+  text-decoration: underline;
+}
+
+/* Subsections Styling */
+.terms-subsection {
+  margin-top: 20px;
+  /* padding-left: 20px; */
+  /* border-left: 3px solid #003366; */
+  /* padding-bottom: 10px; */
+}

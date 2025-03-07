@@ -128,7 +128,9 @@ const DigitalMarketing = () => {
             decorate your enterprise prospects with revel in in jogging
             beneficial advertising campaigns.
           </p>
-          <button className="explore-btn">Explore Course</button>
+          <Link to="/courses">
+            <button className="explore-btn">Explore Course</button>
+          </Link>
         </div>
       </div>
 

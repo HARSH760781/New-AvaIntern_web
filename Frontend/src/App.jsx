@@ -44,6 +44,9 @@ import PaymentPage from "./components/Course Supporter/Course Details/PaymentPag
 import PaymentSuccess from "./components/Course Supporter/Course Details/PaymentSuccess";
 import SuccessPage from "./components/Course Supporter/Course Details/PaymentSuccess";
 import PaymentFailure from "./components/Course Supporter/Course Details/PaymentFailure";
+import TermsAndCondition from "./components/Privacy & Conditions/TermsAndCondition";
+import VLSI from "./components/Courses/UIUX";
+import PrivacyPolicy from "./components/Privacy & Conditions/PrivacyPolicy";
 // import Blockchain from "./components/Courses/Blockchain";
 
 function App() {
@@ -73,6 +76,7 @@ function App() {
         <Route path="/Courses/business-analytics" element={<Business />} />
         <Route path="/Courses/devops" element={<DevOps />} />
         <Route path="/Courses/software-testing" element={<SoftwareTesting />} />
+        <Route path="/Courses/vlsi" element={<VLSI />} />
         <Route
           path="/Courses/digital-marketing"
           element={<DigitalMarketing />}
@@ -87,6 +91,8 @@ function App() {
         <Route path="/payment" element={<PaymentPage />} />
         <Route path="/success" element={<SuccessPage />} />
         <Route path="/payment-failure" element={<PaymentFailure />} />
+        <Route path="/terms_and_Condition" element={<TermsAndCondition />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
 
         {/* You can add more routes here for other sections */}
       </Routes>

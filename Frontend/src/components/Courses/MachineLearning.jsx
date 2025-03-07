@@ -138,7 +138,9 @@ const MachineLearning = () => {
             Machine learning is a branch of AI that enables systems to learn
             from data and make decisions without explicit programming.
           </p>
-          <button className="explore-btn">Explore Course</button>
+          <Link to="/courses">
+            <button className="explore-btn">Explore Course</button>
+          </Link>
         </div>
       </div>
 

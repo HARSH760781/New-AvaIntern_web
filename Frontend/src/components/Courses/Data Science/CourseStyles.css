@@ -66,6 +66,9 @@
   margin: 10px 0;
 }
 
+.timeline-item{
+  background-color: linear-gradient(135deg, #000aef, #828080) !important;
+}
 .explore-btn {
   padding: 10px 20px;
   background: #ff5722;

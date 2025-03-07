@@ -171,7 +171,7 @@ const DevOps = () => {
           "🚀 Containerization with Docker",
           "💼 Hands-on Real Projects",
         ]}
-        imageUrl={"devops_hero.jpg"}
+        imageUrl={"Courses/devops.png"}
       />
 
       {/* Course Menu Navigation */}

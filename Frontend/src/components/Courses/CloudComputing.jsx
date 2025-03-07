@@ -160,7 +160,9 @@ const CloudComputing = () => {
             intelligence—over the Internet (the cloud) to offer faster
             innovation, flexible resources, and economies of scale.
           </p>
-          <button className="explore-btn">Explore Course</button>
+          <Link to="/courses">
+            <button className="explore-btn">Explore Course</button>
+          </Link>
         </div>
       </div>
 

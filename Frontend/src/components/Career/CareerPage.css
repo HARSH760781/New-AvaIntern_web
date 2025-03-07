@@ -6,7 +6,7 @@
   
   /* Hero Section */
   .career-hero {
-    background: url("/images/career-banner.jpg") no-repeat center center/cover;
+    /* background: url("/images/career-banner.jpg") no-repeat center center/cover; */
     color: white;
     padding: 60px 20px; 
     border-radius: 10px;
@@ -29,7 +29,94 @@
     padding: 10px 20px; /* Reduced padding for smaller screens */
     font-size: 1rem; /* Reduced font size for smaller screens */
   }
-  
+  /* CareerPage.css */
+
+  /* CareerPage.css */
+.apply-form {
+  margin-top: 20px;
+  padding: 30px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 24px;
+  font-weight: 700;
+}
+.form-field {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin-top: 6px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  padding-top: 16px; /* Ensure there's space for label to float */
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #007bff; /* Blue border on focus */
+  outline: none;
+}
+
+/* Label Styling */
+label {
+  position: absolute;
+  top: 12px; /* Start above the input text */
+  left: 14px;
+  font-size: 16px;
+  color: #888;
+  font-weight: 500;
+  pointer-events: none;
+  transition: 0.3s ease all;
+  z-index: 1; /* Ensures label is above input */
+  background: #f9f9f9;
+  margin: 1px;
+}
+
+input:focus + label,
+textarea:focus + label,
+input:not(:placeholder-shown) + label,
+textarea:not(:placeholder-shown) + label {
+  top: -10px;
+  font-size: 12px;
+  color: #007bff; /* Blue color for label when floating */
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: transparent; /* Hide the placeholder text */
+}
+
+/* Focused Input Field Styling */
+input:focus,
+textarea:focus {
+  border-color: #007bff; /* Highlight border when focused */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Optional: add box-shadow on focus */
+}
+
+
   /* Career Options Section */
   .career-options {
     display: flex;

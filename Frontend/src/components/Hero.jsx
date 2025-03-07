@@ -143,7 +143,7 @@ const Hero = () => {
           >
             {bootcampImages.length > 0 ? (
               bootcampImages.map((image, index) => (
-                <SwiperSlide key={index}>
+                <SwiperSlide key={index} className="swiper-slide1">
                   <img src={image} alt={`Bootcamp ${index + 1}`} />
                 </SwiperSlide>
               ))

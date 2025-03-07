@@ -195,5 +195,6 @@ h2 {
   @media (max-width:400px){
     .explore-programs{
       padding: 5px !important;
+      margin: 10px auto;
     }
   }
