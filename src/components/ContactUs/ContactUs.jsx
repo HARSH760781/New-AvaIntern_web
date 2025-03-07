@@ -26,12 +26,14 @@ const ContactUs = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const backend_url = import.meta.env.VITE_BACKEND_URL;
+  // console.log(`${backend_url}/submit-form`);
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("Sending...");
 
     try {
-      const response = await fetch("http://localhost:8000/submit-form", {
+      const response = await fetch(`${backend_url}/submit-form`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

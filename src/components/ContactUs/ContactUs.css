@@ -35,6 +35,7 @@
 
 .info-item {
   display: flex;
+  text-wrap: auto;
   align-items: center;
   margin-bottom: 15px;
   background: white;

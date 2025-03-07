@@ -49,20 +49,19 @@ const PaymentPage = () => {
       }
 
       // Create a Razorpay order
+      const backend_url = import.meta.env.VITE_BACKEND_URL;
+
       const orderAmount = parseFloat(amount.replace("Rs ", ""));
-      const response = await fetch(
-        "http://localhost:8000/create-payment-order",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            orderAmount,
-            customerName: name,
-            customerEmail: email,
-            customerPhone: mobile,
-          }),
-        }
-      );
+      const response = await fetch(`${backend_url}/create-payment-order`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          orderAmount,
+          customerName: name,
+          customerEmail: email,
+          customerPhone: mobile,
+        }),
+      });
 
       const data = await response.json();
 

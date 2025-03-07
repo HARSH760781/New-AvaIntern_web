@@ -137,7 +137,7 @@ Stats container styles
 /* Companies Section */
 .companies-section {
   width: 90%;
-  margin: 50px auto;
+  margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -151,7 +151,7 @@ Stats container styles
 /* Logo Rows */
 .logos-row {
   width: 100%;
-  margin: 25px auto;
+  margin: 10px auto;
   overflow: hidden;
   white-space: nowrap;
 }

@@ -1,9 +1,9 @@
 .highlight-box {
-  width: 80%;
-  margin: 0 auto;
+  width: 100% !important;
+  margin: 0;
   padding: 2rem;
-  background: white;
-  border-radius: 12px;
+  background: black;
+  border-radius: 0;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   text-align: center;
   overflow: hidden;
@@ -11,7 +11,7 @@
 
 .highlight-box h2 {
   font-size: 2rem;
-  color: #333;
+  color: white;
   margin-bottom: 1.5rem;
   font-weight: bold;
 }
@@ -41,7 +41,7 @@
   height: 180px;
   margin: 0 10px;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.3);
+  background: white !important;
   backdrop-filter: blur(10px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   display: flex;
