@@ -1,0 +1,218 @@
+/* General Styles */
+.career-page {
+    text-align: center;
+    /* padding: 30px 15px; Reduced padding for smaller screens */
+  }
+  
+  /* Hero Section */
+  .career-hero {
+    background: url("/images/career-banner.jpg") no-repeat center center/cover;
+    color: white;
+    padding: 60px 20px; 
+    border-radius: 10px;
+    margin-bottom: 30px; /* Reduced margin for smaller screens */
+  }
+  
+  .career-hero h1 {
+    font-size: 2rem; /* Reduced font size for smaller screens */
+    margin-bottom: 10px;
+    color: blue;;
+  }
+  
+  .career-hero p {
+    font-size: 1rem; /* Reduced font size for smaller screens */
+    margin-bottom: 20px;
+    color: black;
+  }
+  
+  .career-hero .apply-btn {
+    padding: 10px 20px; /* Reduced padding for smaller screens */
+    font-size: 1rem; /* Reduced font size for smaller screens */
+  }
+  
+  /* Career Options Section */
+  .career-options {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Reduced gap for smaller screens */
+    margin-top: 20px; /* Reduced margin for smaller screens */
+    flex-wrap: wrap;
+    padding-bottom: 30px; /* Reduced padding for smaller screens */
+  }
+  
+  /* Individual Career Cards */
+  .career-card {
+    width: 100%; /* Full width on smaller screens */
+    max-width: 300px; /* Limit width on larger screens */
+    border-radius: 10px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 20px; /* Reduced margin for smaller screens */
+  }
+  
+  .career-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .career-card img {
+    /* width: 100%; */
+    height: 150px; /* Reduced height for smaller screens */
+    object-fit: contain;
+    margin: 10px auto;
+  }
+  
+  .career-content {
+    padding: 10px; /* Reduced padding for smaller screens */
+  }
+  
+  .career-content h3 {
+    font-size: 1.2rem; /* Reduced font size for smaller screens */
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .career-content p {
+    font-size: 0.9rem; /* Reduced font size for smaller screens */
+  }
+  
+  /* Why Join Section */
+  .why-join {
+    background: #f9f9f9;
+    padding: 20px; /* Reduced padding for smaller screens */
+    border-radius: 10px;
+    margin-bottom: 30px; /* Reduced margin for smaller screens */
+  }
+  
+  .why-join h2 {
+    font-size: 1.5rem; /* Reduced font size for smaller screens */
+    margin-bottom: 15px;
+  }
+  
+  .why-join ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .why-join li {
+    font-size: 1rem; /* Reduced font size for smaller screens */
+    margin-bottom: 10px;
+  }
+  
+  /* Testimonials Section */
+  .testimonials {
+    margin-bottom: 30px; /* Reduced margin for smaller screens */
+  }
+  
+  .testimonials h2 {
+    font-size: 1.5rem; /* Reduced font size for smaller screens */
+    margin-bottom: 20px;
+  }
+  
+  .testimonial-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Reduced gap for smaller screens */
+    flex-wrap: wrap;
+  }
+  
+  .testimonial-card {
+    width: 100%; /* Full width on smaller screens */
+    max-width: 280px; /* Limit width on larger screens */
+    background: white;
+    border-radius: 10px;
+    padding: 15px; /* Reduced padding for smaller screens */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin-bottom: 20px; /* Reduced margin for smaller screens */
+  }
+  
+  .testimonial-card img {
+    width: 70px; /* Reduced size for smaller screens */
+    height: 70px; /* Reduced size for smaller screens */
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .testimonial-card p {
+    font-size: 0.9rem; /* Reduced font size for smaller screens */
+    margin-bottom: 10px;
+  }
+  
+  .testimonial-card strong {
+    font-size: 1rem; /* Reduced font size for smaller screens */
+  }
+  
+  /* How to Apply Section */
+  .how-to-apply {
+    background: #eef5ff;
+    padding: 20px; /* Reduced padding for smaller screens */
+    border-radius: 10px;
+    margin-bottom: 30px; /* Reduced margin for smaller screens */
+  }
+  
+  .how-to-apply h2 {
+    font-size: 1.5rem; /* Reduced font size for smaller screens */
+    margin-bottom: 15px;
+  }
+  
+  .how-to-apply ol {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .how-to-apply li {
+    font-size: 1rem; /* Reduced font size for smaller screens */
+    margin-bottom: 10px;
+  }
+  
+  /* FAQ Section */
+  .faq-section {
+    background: #fff;
+    padding: 20px; /* Reduced padding for smaller screens */
+    border-radius: 10px;
+    margin-bottom: 30px; /* Reduced margin for smaller screens */
+  }
+  
+  .faq-section h2 {
+    font-size: 1.5rem; /* Reduced font size for smaller screens */
+    margin-bottom: 20px;
+  }
+  
+  .faq {
+    margin-bottom: 15px; /* Reduced margin for smaller screens */
+    text-align: left;
+  }
+  
+  .faq h3 {
+    font-size: 1.1rem; /* Reduced font size for smaller screens */
+    margin-bottom: 10px;
+  }
+  
+  .faq p {
+    font-size: 0.9rem; /* Reduced font size for smaller screens */
+  }
+  
+  /* Responsive Design */
+  @media (min-width: 768px) {
+    .career-hero {
+      padding: 100px 20px; /* Restore padding for larger screens */
+    }
+  
+    .career-hero h1 {
+      font-size: 2.5rem; /* Restore font size for larger screens */
+    }
+  
+    .career-hero p {
+      font-size: 1.2rem; /* Restore font size for larger screens */
+    }
+  
+    .career-card {
+      width: 300px; /* Restore width for larger screens */
+    }
+  
+    .testimonial-card {
+      width: 280px; /* Restore width for larger screens */
+    }
+  }

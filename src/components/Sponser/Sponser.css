@@ -1,0 +1,124 @@
+.sponsor-container {
+    width: 100%;
+    overflow: hidden; 
+    margin: 20px auto;
+  }
+  .sponsor-container h1{
+    text-align: center;
+  }
+  
+  .sponsor-images {
+    margin: 30px auto;
+    display: flex;
+    animation: scroll-sponsors 20s linear infinite; /* Smooth scrolling animation */
+  }
+  
+  .sponsor-img {
+    height: 100px; /* Set a base height for the images */
+    width: 100px; /* Make the width equal to the height to make them circular */
+    margin: auto 45px; /* Space between images */
+    object-fit: contain; /* Ensure images maintain their aspect ratio */
+    border-radius: 50%; /* Make images rounded */
+    flex-shrink: 0; /* Prevent images from shrinking */
+    transition: transform 0.3s ease-in-out; /* Optional transition effect */
+  }
+  
+  @keyframes scroll-sponsors {
+    0% {
+      transform: translateX(0); /* Start at the beginning */
+    }
+    100% {
+      transform: translateX(-50%); /* Scroll images completely to the left */
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .sponsor-img { 
+      margin: auto 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .sponsor-img {
+      height: 40px; /* Adjust image size for very small screens */
+      width: 40px;
+    }
+    .change-game h1{
+      font-size: 1.5rem !important;
+    }
+    .change-game-button{
+      font-size: 1rem;
+    }
+  }
+  .sponsor-img:hover {
+    transform: scale(1.1); /* Optional: Add hover effect */
+  }
+    
+  .change-game {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #e4e471;
+    color: #333;
+  }
+  
+  .change-game h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .change-game h1 span {
+    color: #0056b3;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  
+  .change-game-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #0056b3;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  }
+  
+  .change-game-button:hover {
+    background-color: #003d80;
+    transform: scale(1.05);
+  }
+  button {
+    background-color: #4caf50; /* Green color */
+    color: white; /* Text color */
+    font-size: 1rem; /* Font size */
+    font-weight: bold; /* Bold text */
+    padding: 12px 20px; /* Padding for a better size */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+  }
+  
+  button:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+    transform: scale(1.05); /* Scale up slightly */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+  }
+  
+  button:active {
+    background-color: #3e8e41; /* Even darker green on active */
+    transform: scale(0.95); /* Slightly shrink on click */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduced shadow */
+  }
+  
+  button:focus {
+    outline: none; /* Remove focus outline */
+    box-shadow: 0 0 0 3px rgba(72, 207, 84, 0.5); /* Add focus ring */
+  }
+  

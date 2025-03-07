@@ -1,0 +1,182 @@
+/* General Styles */
+.container {
+  font-family: "Poppins", sans-serif;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 1200px;
+}
+
+/* Mentor Section */
+.mentor-section {
+  text-align: center;
+  padding: 30px 20px;
+  background: linear-gradient(135deg, #422dcb, #b6aca9);
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.mentor-section h3 {
+  font-size: 2.5rem; /* Increased font size for a more professional feel */
+  color: #ffffff;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.mentor-images {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.mentor-images img {
+  width: 150px; /* Increased image size for a more prominent look */
+  height: 150px;
+  object-fit: cover; /* Ensures image covers the space without distortion */
+  object-position: center center; /* Ensures the image is centered and not cut off */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border 0.3s ease-in-out;
+}
+
+.mentor-images img:hover {
+  transform: scale(1.15); /* Slight increase in size on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow for a more professional effect */
+}
+
+/* Info Section */
+.info-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: #f4f4f4;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  animation: slideUp 1s ease-in-out;
+}
+
+.left-side {
+  max-width: 600px;
+  font-size: 1.3rem; /* Increased font size for a more readable and professional feel */
+  color: #444;
+  font-weight: 500;
+}
+
+.right-side img {
+  width: 200px;
+  height: auto;
+  margin-top: 15px;
+}
+
+/* Grid Section */
+.grid-section {
+  margin-top: 30px;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Default to 4 images in one row */
+  gap: 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.grid-item {
+  background: #ffffff;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  cursor: pointer;
+  box-shadow: 0 0 25px 2px grey;
+  border-radius: 10px;
+}
+
+.grid-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.grid-item img {
+  width: 120px; /* Slightly bigger size for mentor images */
+  /* height: 120px; */
+  object-fit: cover; /* Ensures images fit neatly */
+  object-position: center center; /* Keeps the image centered */
+  margin-bottom: 10px;
+}
+
+.grid-item h4 {
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: 600;
+  margin-top: 10px; /* Adds spacing between image and text */
+}
+
+.grid-item p {
+  font-size: 0.95rem;
+  color: #666;
+  margin-top: 5px; /* Adds spacing between name and specialty */
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  /* For tablet screens, show two items per row */
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .mentor-images {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mentor-images img {
+    width: 130px; /* Adjust image size for smaller screens */
+    height: 130px;
+  }
+
+  .info-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr); /* Two items per row */
+  }
+}
+
+@media (max-width: 480px) {
+  .mentor-section h3 {
+    font-size: 1.8rem; /* Adjust heading size for small screens */
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr; /* One item per row for small screens */
+  }
+}

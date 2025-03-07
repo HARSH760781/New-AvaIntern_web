@@ -1,0 +1,239 @@
+/* General Styles */
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px; /* Reduced padding for smaller screens */
+  text-align: center;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+
+.contact-header {
+  font-size: 2rem; /* Reduced font size for smaller screens */
+  margin-bottom: 20px; /* Reduced margin for smaller screens */
+  color: #222;
+  font-weight: 600;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Contact Content */
+.contact-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Reduced gap for smaller screens */
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Contact Information */
+.contact-info {
+  flex: 1;
+  min-width: 280px; /* Adjusted for smaller screens */
+  max-width: 500px;
+  text-align: left;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  background: white;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.info-icon {
+  font-size: 1.5rem; /* Reduced icon size for smaller screens */
+  color: #0073e6;
+  margin-right: 10px; /* Reduced margin for smaller screens */
+}
+
+.social-media {
+  margin-top: 20px;
+}
+
+.social-media h3 {
+  font-size: 1.25rem; /* Reduced font size for smaller screens */
+  margin-bottom: 10px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px; /* Reduced gap for smaller screens */
+}
+
+.social-icon {
+  font-size: 1.5rem; /* Reduced icon size for smaller screens */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #0073e6;
+  transform: scale(1.1);
+}
+
+/* Contact Form */
+.contact-form {
+  flex: 1;
+  min-width: 280px; /* Adjusted for smaller screens */
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Reduced gap for smaller screens */
+  padding: 15px; /* Reduced padding for smaller screens */
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px; /* Reduced padding for smaller screens */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 0.9rem; /* Reduced font size for smaller screens */
+  transition: border 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #0073e6;
+  outline: none;
+}
+
+.contact-form button {
+  padding: 10px 15px; /* Reduced padding for smaller screens */
+  background-color: #0073e6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem; /* Reduced font size for smaller screens */
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.contact-form button:hover {
+  background-color: #005bb5;
+  transform: scale(1.05);
+}
+
+/* Status Message */
+.status-message {
+  margin-top: 15px; /* Reduced margin for smaller screens */
+  font-size: 0.9rem; /* Reduced font size for smaller screens */
+  color: green;
+}
+
+/* FAQ Section */
+.faq-section {
+  margin-top: 30px; /* Reduced margin for smaller screens */
+  text-align: left;
+}
+
+.faq-section h3 {
+  font-size: 1.25rem; /* Reduced font size for smaller screens */
+  margin-bottom: 15px; /* Reduced margin for smaller screens */
+  color: #333;
+}
+
+.faq-item {
+  margin-bottom: 10px; /* Reduced margin for smaller screens */
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px 2px #a37d7d7d;
+  padding: 8px; /* Reduced padding for smaller screens */
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0; /* Reduced padding for smaller screens */
+}
+
+.faq-question strong {
+  font-size: 1rem; /* Reduced font size for smaller screens */
+  color: #333;
+}
+
+.faq-icon {
+  font-size: 0.9rem; /* Reduced icon size for smaller screens */
+  transition: transform 0.3s ease;
+}
+
+.faq-icon.open {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  font-size: 0.9rem; /* Reduced font size for smaller screens */
+  color: #666;
+  overflow: hidden;
+  padding: 0 8px; /* Reduced padding for smaller screens */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .faq-section{
+    padding: 5px;
+  }
+
+  .contact-info,
+  .contact-form {
+    width: 100%;
+  }
+
+  .contact-header {
+    font-size: 1.75rem; /* Further reduced font size for mobile */
+  }
+
+  .faq-section h3 {
+    font-size: 1.1rem; /* Further reduced font size for mobile */
+  }
+
+  .faq-question strong {
+    font-size: 0.9rem; /* Further reduced font size for mobile */
+  }
+
+  .faq-answer {
+    font-size: 0.85rem; /* Further reduced font size for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-container {
+    padding: 20px 10px; /* Further reduced padding for very small screens */
+  }
+
+  .contact-header {
+    font-size: 1.5rem; /* Further reduced font size for very small screens */
+  }
+
+  .faq-section h3 {
+    font-size: 1rem; /* Further reduced font size for very small screens */
+  }
+
+  .faq-question strong {
+    font-size: 0.85rem; /* Further reduced font size for very small screens */
+  }
+
+  .faq-answer {
+    font-size: 0.8rem; /* Further reduced font size for very small screens */
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

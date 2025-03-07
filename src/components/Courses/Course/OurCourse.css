@@ -1,0 +1,105 @@
+/* Container */
+@media (max-width:600px)
+ {
+  .course-image .info-image{
+    width: 100% !important;
+  }
+ }
+.our-courses-container {
+    padding: 80px 5%;
+    text-align: center;
+    background: linear-gradient(135deg, #eef2f3, #ffffff);
+  }
+  
+  /* Heading */
+  .our-courses-heading {
+    font-size: 2.8rem;
+    color: #1f2937;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .our-courses-heading::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #3498db;
+    margin: 10px auto;
+    border-radius: 2px;
+  }
+  
+  /* Courses Wrapper - Flexbox */
+  .our-courses-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  /* Course Card */
+  .our-course-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: calc(33.33% - 20px);
+    max-width: 350px;
+    box-shadow: 1px 3px 10px 8px #cac2c2;
+  }
+  
+  .our-course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Course Image */
+  .our-course-image {
+    width: 100%;
+    /* height: 230px; */
+    object-fit: contain;
+    background: #f4f4f4;
+    padding: 10px;
+    border-bottom: 2px solid #ddd;
+    transition: transform 0.3s ease-in-out;
+    
+  }
+img{
+    border-radius: 10px;
+  }
+  
+  .our-course-card:hover .course-image {
+    transform: scale(1.05);
+  }
+  
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .our-course-card {
+      width: calc(50% - 20px);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .our-courses-heading {
+      font-size: 2.5rem;
+    }
+  
+    .our-course-card {
+      width: 100%;
+    }
+  
+    .course-image {
+      height: 190px;
+    }
+  }
+  

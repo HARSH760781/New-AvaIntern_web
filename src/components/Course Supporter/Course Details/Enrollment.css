@@ -1,0 +1,192 @@
+/* Enrollment.css */
+
+/* Reset the margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ensure that body takes full height */
+body, html {
+  height: 100%;
+}
+
+.title{
+  font-size: 100% !important;
+  font-weight: bold !important;
+}
+/* General Styles */
+.enrollment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+/* Left Section (Course Info + FAQ) */
+.left-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Course Info Section */
+.course-info {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.course-info img {
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.course-info h4 {
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.course-info p {
+  color: #555;
+  line-height: 1.6;
+}
+
+/* FAQ Section */
+.enrollment-faq {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.enrollment-faq h4 {
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.enrollment-faq .MuiAccordion-root {
+  margin-bottom: 10px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.enrollment-faq .MuiAccordionSummary-root {
+  background-color: #fff;
+}
+
+.enrollment-faq .MuiAccordionDetails-root {
+  background-color: #f9f9f9;
+}
+
+/* Form Container */
+.form-container {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form-container .MuiTextField-root,
+.form-container .MuiFormControl-root {
+  margin-bottom: 16px;
+}
+
+.form-container .MuiButton-root {
+  margin-top: 10px;
+  background-color: #1976d2;
+  color: #fff;
+}
+
+.form-container .MuiButton-root:hover {
+  background-color: #1565c0;
+}
+
+/* Toast Container */
+.Toastify__toast-container {
+  font-size: 14px;
+}
+
+.Toastify__toast--success {
+  background-color: #4caf50;
+}
+
+.Toastify__toast--error {
+  background-color: #f44336;
+}
+
+/* Responsive Layout */
+@media (min-width: 768px) {
+  .enrollment-form {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .left-section {
+    flex: 1;
+    max-width: 45%;
+  }
+
+  .form-container {
+    flex: 1;
+    max-width: 45%;
+    position: sticky;
+    top: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .left-section,
+  .form-container {
+    width: 100%;
+  }
+}
+/* Hide the line below the label when the Select is focused */
+.Mui-focused .MuiInputLabel-root {
+  color: rgba(0, 0, 0, 0.6); /* Keep the label color consistent */
+}
+
+.Mui-focused .MuiInputLabel-root::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: transparent; /* Make the line invisible */
+}
+
+/* Ensure the label moves up smoothly */
+.MuiInputLabel-root {
+  transition: color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+              transform 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+@media (max-width:500px)
+{
+  .enrollment-faq{
+    padding: 5px;
+  }
+  .enrollment-faq h4{
+    font-size: 20px !important;
+    color: #1565c0;
+  }
+  .enrollment-faq h6{
+    font-size: 15px !important;
+    /* color: #1565c0; */
+  }
+  .faq-answer{
+    font-size: 12px !important;
+  }
+}

@@ -1,0 +1,164 @@
+.hero-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two-column layout */
+  align-items: center;
+  gap: 20px;
+  padding: 40px;
+  max-width: 100%;
+  background: black;
+  box-sizing: border-box;
+}
+
+.hero-left,
+.hero-right {
+  width: 100%; /* Ensure both sections take full width of their respective columns */
+}
+.hero-left {
+  padding: 20px;
+  max-width: 100%;
+}
+
+.hero-left h2 {
+  color: white;
+  font-size: 52px;
+  font-weight: bold;
+}
+
+.hero-left p {
+  color: white;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.hero-left span {
+  color: #007bff;
+}
+
+.hero-right {
+  text-align: center;
+  width: 100%; /* Ensure the container takes full width */
+}
+
+.hero-right .swiper {
+  width: 100%;
+  max-width: 450px; /* Limit Swiper container width for larger screens */
+  height: auto; /* Allow height to adjust dynamically */
+  margin: 0 auto; /* Center the Swiper container */
+}
+
+.hero-right .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Ensure the slide takes full width */
+  height: auto; /* Allow height to adjust automatically */
+}
+
+.hero-right img {
+  width: 100%; /* Make the image fill the width of the container */
+  height: auto; /* Maintain the aspect ratio */
+  max-height: 400px; /* Limit image height for larger screens */
+  object-fit: contain; /* Ensures image fits within container without cropping */
+  border-radius: 10px;
+  transition: transform 0.8s ease-in-out;
+}
+
+.hero-right img:hover {
+  transform: scale(0.95); /* Slight zoom effect on hover */
+}
+
+/* Responsive Design */
+
+@media (max-width: 850px) {
+  .hero-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-left h2 {
+    font-size: 36px;
+  }
+
+  .hero-left p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-left h2 {
+    font-size: 28px;
+  }
+
+  .hero-left p {
+    font-size: 14px;
+  }
+
+  .hero-left,
+  .hero-right {
+    max-width: 80%;
+    margin: auto; /* Center horizontally */
+  }
+}
+
+@media (max-width: 400px) {
+  .hero-container {
+    padding: 10px; /* Reduce padding for small screens */
+    display: flex; /* Use flexbox for better centering */
+    flex-direction: column; /* Stack vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+  }
+
+  .hero-left,
+  .hero-right {
+    max-width: 90%; /* Slightly wider for better readability */
+    margin: 0 auto; /* Center horizontally */
+    text-align: center; /* Center text */
+  }
+
+  .hero-left h2 {
+    font-size: 24px; /* Smaller font size for small screens */
+  }
+
+  .hero-left p {
+    font-size: 13px; /* Smaller paragraph text */
+  }
+
+  .hero-right .swiper {
+    max-width: 90%; /* Adjust Swiper width for small screens */
+  }
+
+  .hero-right img {
+    max-height: 250px; /* Adjust image height for small screens */
+  }
+}
+
+@media (max-width: 350px) {
+  .hero-left h2 {
+    font-size: 1.2rem; /* Even smaller font size */
+  }
+
+  .hero-left,
+  .hero-right {
+    padding:5px;
+    max-width: 100%; /* Slightly wider for better readability */
+  }
+
+  .hero-container {
+    padding: 5px; /* Minimal padding for small screens */
+  }
+
+  .hero-left p {
+    font-size: 0.9rem; /* Smaller paragraph text */
+  }
+
+  .hero-left button {
+    font-size: 0.8rem; /* Smaller button text */
+    padding: 8px 16px; /* Adjust padding */
+  }
+
+  .hero-right {
+    margin-top: 10px; /* Add spacing between sections */
+  }
+}

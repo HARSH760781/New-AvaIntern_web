@@ -1,0 +1,236 @@
+Stats container styles
+.stats-container {
+  width: 50%;
+  margin: auto;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  min-height: 50vh;
+  background-color: white;
+  box-sizing: border-box;
+  
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust for better auto layout */
+  gap: 20px;
+  max-width: 50%;
+  margin: auto;
+}
+
+/* Individual stat card styles */
+.stat-card {
+  background-color: white;
+  border: 1px solid #aca9a954;
+  /* border: 2px solid #e4e471; */
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(78, 74, 74, 0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.stat-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #1a1fc6;
+  margin-bottom: 10px;
+}
+
+.stat-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #5421cc;
+}
+
+/* Media queries for responsiveness */
+
+/* Mobile screens (max-width: 767px) */
+@media (max-width: 767px) {
+  .stats-container {
+    padding: 20px 10px;  /* Reduce padding on small screens */
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;  /* Display one card per row */
+    gap: 15px;
+  }
+
+  .stat-card {
+    padding: 15px;  /* Smaller padding for mobile screens */
+  }
+
+  .stat-value {
+    font-size: 2rem;  /* Adjust font size for smaller screens */
+  }
+
+  .stat-title {
+    font-size: 1rem;  /* Adjust title font size for mobile screens */
+  }
+}
+
+/* Tablet screens (768px to 1024px) */
+@media (max-width: 1024px) {
+  .stats-container {
+  
+    padding: 30px 15px;
+
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);  /* Two columns layout */
+  }
+
+  .stat-card {
+    padding: 18px;
+  }
+
+  .stat-value {
+    font-size: 2.3rem;
+  }
+
+  .stat-title {
+    font-size: 1.1rem;
+  }
+}
+
+/* Large Screens (1025px and up) */
+@media (min-width: 1025px) {
+  .stats-container {
+    padding: 40px 20px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr);  /* Four columns for larger screens */
+  }
+
+  .stat-card {
+    padding: 20px;
+  }
+
+  .stat-value {
+    font-size: 2.5rem;
+  }
+
+  .stat-title {
+    font-size: 1.2rem;
+  }
+}
+
+/* Companies Section */
+.companies-text{
+  width: 90% !important; 
+  margin: 10px auto;
+  text-align: center;
+  font-weight: 600;
+}
+/* Companies Section */
+.companies-section {
+  width: 90%;
+  margin: 50px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo Rows */
+.logos-row {
+  width: 100%;
+  margin: 25px auto;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.logos {
+  display: inline-flex; /* Use inline-flex for continuous scrolling */
+  animation: slide 20s linear infinite;
+}
+
+.second-row .logos {
+  animation: slide-reverse 20s linear infinite;
+}
+
+.third-row .logos {
+  animation: slide 20s linear infinite;
+}
+
+/* Logo Styling */
+.logos img {
+  height: 50px; /* Fixed height for professionalism */
+  width: auto; /* Maintain aspect ratio */
+  margin: 0 40px; /* Consistent spacing between logos */
+  object-fit: contain; /* Ensure logos fit properly */
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
+.logos img:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Keyframes for Left to Right Animation */
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Move by 50% to create a seamless loop */
+  }
+}
+
+/* Keyframes for Right to Left Animation */
+@keyframes slide-reverse {
+  0% {
+    transform: translateX(-50%); /* Start from the middle for seamless loop */
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .companies-section {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .logos img {
+    height: 40px; /* Smaller logos for mobile */
+    margin: 0 20px; /* Reduced spacing for mobile */
+  }
+  .stats-grid{
+    max-width: 80% !important;
+  }
+}
+
+@media (max-width: 550px) {
+  .logos img {
+    height: 30px; /* Even smaller logos for small screens */
+    margin: 0 15px; /* Minimal spacing for small screens */
+  }
+  .stat-value {
+    font-size: 1.5em !important;
+  }
+  .stat-title{
+    font-size: 15px !important;
+  }
+  .stat-card{
+    padding: 5px;
+  }
+}

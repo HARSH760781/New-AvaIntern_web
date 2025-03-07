@@ -1,0 +1,127 @@
+.testimonial-container {
+  /* width: 90%; */
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+  box-sizing: border-box; /* Make sure padding doesn't affect the overall width */
+}
+
+.testimonial-heading {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Ensure slide takes full width */
+}
+
+.testimonial-card {
+  background: #fff;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  border: 2px solid blue;
+  width: 100%; /* Ensures the card doesn't overflow */
+  max-width: 320px; /* Prevents it from growing too wide on larger screens */
+  margin: 0 auto; /* Centers the card */
+  padding: 20px;
+}
+
+.testimonial-card:hover {
+  transform: scale(1.05);
+}
+
+.testimonial-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.testimonial-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  border: 3px solid #4175df;
+  object-fit: cover;
+}
+
+.testimonial-rating {
+  font-size: 18px;
+  color: #f39c12;
+  margin-bottom: 8px;
+}
+
+.testimonial-text {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.testimonial-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.testimonial-feedback {
+  text-align: justify;
+}
+
+@media (min-width: 1024px) {
+  .testimonial-container {
+    max-width: 1000px;
+    padding: 0;
+  }
+}
+
+@media (max-width: 425px) {
+  .swiper {
+    width: 100%;
+  }
+
+  .swiper-wrapper {
+    padding: 0 !important;
+  }
+
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+  }
+
+  .testimonial-card {
+    margin: 0 auto; /* Ensures the card is centered */
+    width: 100%; /* Ensures the card takes full width */
+    max-width: 320px; /* Ensures the card doesn't grow too wide */
+    padding: 20px; /* Padding for better spacing */
+  }
+
+  .testimonial-image {
+    width: 70px; /* Adjust image size */
+    height: 70px; /* Adjust image size */
+  }
+
+  .testimonial-name {
+    font-size: 14px; /* Slightly smaller name font */
+  }
+
+  .testimonial-feedback {
+    font-size: 12px; /* Reduce feedback text size for small screens */
+  }
+}
