@@ -4,13 +4,9 @@ import { useInView } from "react-intersection-observer";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { FaBullseye, FaLightbulb, FaCogs } from "react-icons/fa";
-import faqImage from "/images/literature.png";
-import CourseHeader from "../Course Supporter/Course Header/CourseHeader";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-
 import "swiper/css/pagination";
-// import { Navigation } from "swiper/modules";
 import "swiper/css/navigation";
 import {
   Pagination,
