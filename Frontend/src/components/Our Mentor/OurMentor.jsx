@@ -2,10 +2,10 @@ import React from "react";
 import "./OurMentor.css";
 
 // Import your images and gifs
-import mentorImage1 from "/images/Reviews/Krishna.png";
-import mentorImage2 from "/images/Reviews/arzoo.png";
+import mentorImage1 from "/images/Reviews/3.jpg";
+import mentorImage2 from "/images/Reviews/arzoo.jpg";
 import mentorImage3 from "/images/Reviews/Rohit.jpg";
-import mentorImage4 from "/images/Reviews/Raji Kumar.jpg";
+import mentorImage4 from "/images/Reviews/rajit kumar.jpg";
 import gifImage from "/images/THUMB.jpg";
 
 const OurMentor = () => {
@@ -41,8 +41,8 @@ const OurMentor = () => {
         <div className="grid-container">
           <div className="grid-item">
             <img src={mentorImage1} alt="Eng. Krishna" />
-            <h4>Eng. Krishna</h4>
-            <p> VLSI & Embedded System Specialist </p>
+            <h4>Eng. Vollala Sindhu</h4>
+            <p> Software Developer </p>
           </div>
           <div className="grid-item">
             <img src={mentorImage2} alt="Eng. Arzoo" />

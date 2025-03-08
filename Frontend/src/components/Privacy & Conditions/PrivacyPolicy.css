@@ -24,11 +24,11 @@
     margin-bottom: 30px;
   }
   
-  .section {
+  .privacy-policy-container .section {
     margin-bottom: 30px;
   }
   
-  h2 {
+  .privacy-policy-container h2 {
     font-size: 22px;
     color: #003366;
     border-bottom: 2px solid #003366;
@@ -36,14 +36,14 @@
     margin-bottom: 15px;
   }
   
-  h3 {
+  .privacy-policy-container h3 {
     font-size: 18px;
     color: #00539C;
     margin-top: 20px;
     margin-bottom: 10px;
   }
   
-  p {
+  .privacy-policy-container p {
     font-size: 16px;
     margin-bottom: 15px;
     text-align: justify;
@@ -63,15 +63,15 @@
       font-size: 28px;
     }
   
-    h2 {
+    .privacy-policy-container h2 {
       font-size: 20px;
     }
   
-    h3 {
+    .privacy-policy-container h3 {
       font-size: 16px;
     }
   
-    p {
+    .privacy-policy-container p {
       font-size: 14px;
     }
   }

@@ -101,7 +101,7 @@
 }
 
 .grid-item img {
-  width: 120px; /* Slightly bigger size for mentor images */
+  width: 50%; /* Slightly bigger size for mentor images */
   /* height: 120px; */
   object-fit: cover; /* Ensures images fit neatly */
   object-position: center center; /* Keeps the image centered */
