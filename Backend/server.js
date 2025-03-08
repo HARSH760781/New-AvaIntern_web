@@ -218,20 +218,19 @@ app.post("/create-payment-order", async (req, res) => {
   }
 });
 
-app.use(express.static(path.join(__dirname, "build")));
+app.use(express.static(path.join(__dirname, "dist")), {
+  setHeaders: (res, filePath) => {
+    if (filePath.endsWith(".css")) {
+      res.setHeader("Content-Type", "text/css");
+    }
+  },
+});
 
 // Handle all other routes by serving the index.html file
-app.get("*", async (req, res) => {
-  try {
-    const response = await axios.get(
-      `https://avaintern-frontend.onrender.com/${req.path}`
-    );
-    res.send(response.data);
-  } catch (error) {
-    res.status(500).send("Error proxying to frontend");
-  }
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "dist", "index.html"));
 });
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
   console.log(`Proxy server running on http://localhost:${PORT}`);
 });
