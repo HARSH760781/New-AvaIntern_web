@@ -221,8 +221,15 @@ app.post("/create-payment-order", async (req, res) => {
 app.use(express.static(path.join(__dirname, "build")));
 
 // Handle all other routes by serving the index.html file
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
+app.get("*", async (req, res) => {
+  try {
+    const response = await axios.get(
+      `https://avaintern-frontend.onrender.com/${req.path}`
+    );
+    res.send(response.data);
+  } catch (error) {
+    res.status(500).send("Error proxying to frontend");
+  }
 });
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
