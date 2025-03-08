@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Button from "@mui/material/Button";
-import { BeatLoader } from "react-spinners";
 import { motion } from "framer-motion";
 import {
   FaChalkboardTeacher,
@@ -9,9 +8,8 @@ import {
   FaUserGraduate,
   FaCode,
   FaLaptopCode,
-} from "react-icons/fa"; // Adding new icons
+} from "react-icons/fa";
 import "./Hero.css";
-import Course_Info from "./Basic_Feature/Course_Info";
 import Banner from "./Banner/Banner";
 import ExplorePrograms from "./Explore Program/ExplorePrograms";
 import Provide from "./Provide/Provide";
@@ -24,13 +22,12 @@ import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-cards";
-import { Autoplay, EffectCards, Navigation, Pagination } from "swiper/modules";
+import { EffectCards, Autoplay } from "swiper/modules";
 import usePageTitle from "./Hooks/usePageTitle";
 
 const Hero = () => {
   usePageTitle();
   const [bootcampImages, setBootcampImages] = useState([]);
-  const [imagesLoaded, setImagesLoaded] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -55,7 +52,6 @@ const Hero = () => {
         }
 
         const bootcampUrls = data.values.map((row) => row[0]);
-        // console.log(videoUrls);
         setBootcampImages(bootcampUrls);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -65,11 +61,6 @@ const Hero = () => {
     fetchData();
   }, []);
 
-  const handleImageLoad = () => {
-    if (bootcampImages.length > 0) {
-      setImagesLoaded(true);
-    }
-  };
   return (
     <>
       <div className="hero-container">
@@ -80,8 +71,7 @@ const Hero = () => {
           transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
         >
           <h2>
-            Unlock Your Potential and <span>Build Your Future</span> <FaCode />{" "}
-            {/* Adding an icon inline with text */}
+            Unlock Your Potential and <span>Build Your Future</span> <FaCode />
           </h2>
           <p>
             From classroom to career, we prepare you with practical learning
@@ -108,17 +98,8 @@ const Hero = () => {
                 "&:hover": { background: "#fdd017", color: "black" },
               }}
             >
-              Get Started <FaUserGraduate style={{ marginLeft: "8px" }} />{" "}
-              {/* Replacing with a new icon */}
+              Get Started <FaUserGraduate style={{ marginLeft: "8px" }} />
             </Button>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1, duration: 0.8 }}
-          >
-            {/* <Course_Info /> */}
           </motion.div>
         </motion.div>
 
@@ -128,41 +109,33 @@ const Hero = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, type: "spring", stiffness: 120 }}
         >
-          <Swiper
-            effect={"cards"} // Use the 'cards' effect
-            modules={[Autoplay, Pagination, EffectCards]} // Include necessary modules
-            loop={true} // Enable infinite loop
-            autoplay={{
-              delay: 2000, // 1 second delay for smooth transitions
-              disableOnInteraction: false, // Keep autoplay going even after user interaction
-              reverseDirection: true, // Reverse the autoplay direction (optional)
-            }}
-            pagination={{ clickable: true }} // Enable clickable pagination
-            spaceBetween={20} // Space between slides
-            slidesPerView={2} // Display one slide at a time
-            grabCursor={true} // Show grab cursor for better UX
-            observer={true} // Observe changes in the DOM
-            observeParents={true} // Observe parent elements for changes
-          >
-            {bootcampImages.length > 0 ? (
-              bootcampImages.map((image, index) => (
-                <SwiperSlide key={index} className="swiper-slide1">
-                  <img
-                    src={image}
-                    alt={`Bootcamp ${index + 1}`}
-                    onLoad={handleImageLoad} // Add this line
-                    style={{
-                      width: "100%",
-                      height: "auto",
-                      objectFit: "cover",
-                    }}
-                  />
+          {bootcampImages.length > 0 ? (
+            <Swiper
+              effect={"cards"} // Use the 'cards' effect
+              grabCursor={true} // Show grab cursor for better UX
+              modules={[EffectCards, Autoplay]} // Include necessary modules
+              // loop={true}
+              autoplay={{
+                delay: 2000, // Auto-slide every 3 seconds
+                disableOnInteraction: false, // Keep autoplay going even after user interaction
+              }}
+              className="mySwiper"
+            >
+              {bootcampImages.map((image, index) => (
+                <SwiperSlide key={index}>
+                  <div className="swiper-slide">
+                    <img
+                      src={image}
+                      alt={`Bootcamp ${index + 1}`}
+                      className="swiper-image"
+                    />
+                  </div>
                 </SwiperSlide>
-              ))
-            ) : (
-              <div>Loading ....</div>
-            )}
-          </Swiper>
+              ))}
+            </Swiper>
+          ) : (
+            <div>Loading ....</div>
+          )}
         </motion.div>
       </div>
       <Banner />

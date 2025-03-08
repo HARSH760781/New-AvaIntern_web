@@ -48,6 +48,7 @@ import TermsAndCondition from "./components/Privacy & Conditions/TermsAndConditi
 import VLSI from "./components/Courses/UIUX";
 import PrivacyPolicy from "./components/Privacy & Conditions/PrivacyPolicy";
 import ScrollToTop from "./components/ScrollToTop";
+import NotFound from "./components/NotFound";
 function App() {
   return (
     <Router>
@@ -94,7 +95,7 @@ function App() {
         <Route path="/terms_and_Condition" element={<TermsAndCondition />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
 
-        {/* You can add more routes here for other sections */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </Router>

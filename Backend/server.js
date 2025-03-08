@@ -9,6 +9,7 @@ const { v4: uuidv4 } = require("uuid");
 const orderId = `order_${uuidv4()}`;
 require("dotenv").config();
 const Razorpay = require("razorpay");
+const { log } = require("console");
 
 const app = express();
 app.use(cors());
@@ -217,10 +218,9 @@ app.post("/create-payment-order", async (req, res) => {
   }
 });
 
-app.use(express.static(path.join(__dirname, "dist")));
-
+app.use(express.static(path.join(__dirname, "..", "frontend", "dist")));
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "dist", "index.html"));
+  res.sendFile(path.join(__dirname, "..", "frontend", "dist", "index.html"));
 });
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {

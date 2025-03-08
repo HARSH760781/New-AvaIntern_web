@@ -12,6 +12,7 @@
 .hero-left,
 .hero-right {
   width: 100%; /* Ensure both sections take full width of their respective columns */
+  text-align: center;
 }
 
 .hero-left {
@@ -23,12 +24,14 @@
   color: white;
   font-size: 52px;
   font-weight: bold;
+  line-height: 1.2; /* Improve readability */
 }
 
 .hero-left p {
   color: white;
   font-weight: 500;
   font-size: 20px;
+  margin-top: 15px; /* Add spacing between heading and paragraph */
 }
 
 .hero-left span {
@@ -37,31 +40,56 @@
 
 .hero-right {
   text-align: center;
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
   width: 100%; /* Ensure the container takes full width */
+  overflow: hidden; /* Prevent images from overflowing */
 }
 
 .hero-right .swiper {
-  width: 100%;
-  max-width: 600px; /* Limit Swiper container width for larger screens */
+  width: 100%; /* Allow Swiper to adjust to the width of the images */
   height: auto; /* Allow height to adjust dynamically */
   margin: 0 auto; /* Center the Swiper container */
+  display: flex; /* Ensure the swiper is flex container */
+  justify-content: center; /* Center the swiper container */
+  margin: auto 20% !important;
+}
+
+.hero-right .swiper-cards {
+  display: flex;
+  justify-content: center; /* Center all cards horizontally */
+  align-items: center; /* Center the cards vertically */
+  gap: 20px; /* Spacing between the cards */
+  flex-wrap: wrap; /* Ensure cards wrap properly on smaller screens */
+  width: 100%;
+  max-width: 100%; /* Ensure the cards do not overflow their container */
 }
 
 .hero-right .swiper-slide {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%; /* Ensure the slide takes full width */
+  width: auto; /* Allow the slide to adjust to the width of the image */
   height: auto; /* Allow height to adjust automatically */
+  overflow: hidden; /* Prevent overflow */
+  border-radius: 10px; /* Add rounded corners */
+  padding: 0; /* Remove padding to avoid extra space */
+  margin: 0; /* Remove margin to avoid extra space */
 }
 
 .hero-right img {
-  width: 100%; /* Make the image fill the width of the container */
+  width: auto; /* Allow the image to determine its own width */
+  max-width: 100%; /* Ensure the image doesn't exceed the container width */
   height: auto; /* Maintain the aspect ratio */
   max-height: 500px; /* Limit image height for larger screens */
   object-fit: contain; /* Ensures image fits within container without cropping */
   border-radius: 10px;
   transition: transform 0.8s ease-in-out;
+}
+
+.hero-right .swiper-slide {
+  width: auto !important;
 }
 
 .hero-right img:hover {
@@ -78,8 +106,12 @@
   .hero-right img {
     max-height: 400px; /* Adjust image height for medium screens */
   }
-  .hero-container{
-    padding: 0;
+
+  .hero-right .swiper{
+    margin: auto 15% !important;
+  }
+  .hero-container {
+    padding: 20px; /* Reduce padding for medium screens */
   }
 }
 
@@ -87,17 +119,20 @@
   .hero-container {
     padding: 20px;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Stack sections vertically on smaller screens */
+    gap: 30px; /* Add spacing between sections */
+  }
+
+  .hero-left {
+    text-align: center; /* Center-align text on smaller screens */
   }
 
   .hero-left h2 {
-    font-size: 36px;
+    font-size: 36px; /* Reduce font size for smaller screens */
   }
-  .hero-left{
-    text-align: center !important;
-  }
+
   .hero-left p {
-    font-size: 16px;
+    font-size: 16px; /* Reduce font size for smaller screens */
   }
 
   .hero-right .swiper {
@@ -108,32 +143,16 @@
     max-height: 350px; /* Adjust image height for smaller screens */
   }
 }
+
 /* Responsive Design for Screens Below 480px */
 @media (max-width: 480px) {
   .hero-left h2 {
     font-size: 28px; /* Further reduce font size for very small screens */
   }
-  /* .hero-right{
-    overflow: hidden !important;
-    width: 90% !important;
-  } */
-  .hero-right .swiper .swiper-cards{
-    overflow: hidden !important;
-  }
-  swiper-slide1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    border-radius: 10px; /* Optional: Add rounded corners */
-  }
-  
-  .swiper-slide1 img {
-    width: 100%;
-    height: auto;
-    object-fit: cover; /* Maintain aspect ratio */
-  }
 
+  .hero-right .swiper {
+    margin: auto 15%;
+  }
   .hero-left p {
     font-size: 14px; /* Further reduce font size for very small screens */
   }
@@ -143,13 +162,8 @@
     padding: 0 10px; /* Reduce padding for very small screens */
   }
 
-    .swiper-slide1{
-      width: 200px !important;
-    }
   .hero-right img {
-    max-height: 400px; /* Increase image height for very small screens */
-    width: 200px !important; /* Ensure the image takes full width */
-    height: auto; /* Maintain aspect ratio */
+    max-height: 300px; /* Adjust image height for very small screens */
     border-radius: 10px; /* Maintain border radius */
   }
 }
@@ -165,9 +179,9 @@
   }
 
   .hero-right img {
-    max-height: 350px; /* Adjust image height for the smallest screens */
+    max-height: 250px; /* Adjust image height for the smallest screens */
   }
-  .hero-right .swiper-wrapper{
-    transform: translateX(40.5px) !important;
+  .hero-right .swiper{
+    margin: auto 10% !important;
   }
 }

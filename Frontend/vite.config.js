@@ -3,10 +3,8 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  root: ".", // Set the root to the current directory (Frontend)
-  publicDir: "public", // Specify the public directory
+  base: "/", // Adjust if your app is hosted in a subdirectory
   build: {
-    outDir: "dist", // Output the build files to a `dist` folder
-    emptyOutDir: true, // Clear the output directory before building
+    outDir: "dist", // Adjust the output directory if needed
   },
 });

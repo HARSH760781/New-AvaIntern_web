@@ -14,7 +14,7 @@
   padding: 20px;
   background: #fff;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -24,10 +24,9 @@
 }
 
 .row-image {
-  width: 100%;
-  max-width: 150px;
-  height: auto;
-  margin-bottom: 15px;
+  width: 180px;
+    height: 80px;
+    object-fit: cover;
 }
 
 .row-content {
@@ -111,9 +110,9 @@
   }
 
   .row-image {
-    margin-right: 25px;
-    margin-bottom: 0;
-    max-width: 120px;
+    object-fit: cover;
+    height: 80px;
+    width: 180px;
   }
 
   .row-content {

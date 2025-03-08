@@ -21,6 +21,7 @@ const pages = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
   { name: "Courses", path: "#" },
+  { name: "Our LMS", path: "https://avainternlms.in", target: "_blank" }, // Add target="_blank"
   { name: "Certification", path: "/certification" },
   { name: "Career", path: "/career" },
   { name: "Contact Us", path: "/contact" },
@@ -98,7 +99,6 @@ function ResponsiveAppBar() {
       sx={{
         backgroundColor: "white",
         color: "blue",
-
         boxShadow: "none",
         "& .MuiTypography-root": {
           fontWeight: "bold",
@@ -245,6 +245,8 @@ function ResponsiveAppBar() {
                       fontWeight: "bold",
                       width: "100%",
                     }}
+                    target={page.target} // Add target attribute
+                    rel={page.target ? "noopener noreferrer" : undefined} // Add rel attribute for security
                   >
                     {page.name}
                   </Typography>
@@ -323,6 +325,8 @@ function ResponsiveAppBar() {
                 }
                 component={Link}
                 to={page.path === "#" ? "#" : page.path}
+                target={page.target} // Add target attribute
+                rel={page.target ? "noopener noreferrer" : undefined} // Add rel attribute for security
               >
                 {page.name}
               </Button>
@@ -345,7 +349,6 @@ function ResponsiveAppBar() {
             <Paper
               sx={{
                 borderRadius: "12px",
-                // background: "rgba(255, 255, 255, 0.25)",
                 backdropFilter: "blur(10px)",
                 boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.2)",
                 padding: "20px",
