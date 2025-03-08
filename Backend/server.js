@@ -218,15 +218,8 @@ app.post("/create-payment-order", async (req, res) => {
   }
 });
 
-app.use(
-  express.static(path.join(__dirname, "dist"), {
-    setHeaders: (res, filePath) => {
-      if (filePath.endsWith(".css")) {
-        res.setHeader("Content-Type", "text/css");
-      }
-    },
-  })
-);
+app.use(express.static(path.join(__dirname, "dist")));
+
 // Handle all other routes by serving the index.html file
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "dist", "index.html"));
