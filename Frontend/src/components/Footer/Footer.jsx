@@ -9,10 +9,10 @@ const Footer = () => {
       <div className="footer-container">
         {/* Column 1 */}
         <div className="footer-column">
-          <h3>About Us</h3>
+          <h3>Our Program</h3>
           <p>
-            We provide top-notch courses to help you enhance your skills and
-            advance in your career. Join us and start learning today!
+            We have so many programs for students for their personal and
+            professional growth. Join us and start learning today!
           </p>
         </div>
 
