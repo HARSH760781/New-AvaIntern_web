@@ -200,8 +200,6 @@ const EnrollmentForm = () => {
 
     setLoading(true);
 
-    // Replace this with your SheetDB API endpoint
-    // const url = "https://sheetdb.io/api/v1/zny3zxgzfooyk";
     const url = import.meta.env.VITE_SHEETDB_URL;
     try {
       const response = await fetch(url, {
@@ -223,8 +221,8 @@ const EnrollmentForm = () => {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
-
       const result = await response.json();
+      console.log("response.json:", result);
       if (result.created > 0) {
         toast.success("Redirecting to the payment...", {
           autoClose: 2000,

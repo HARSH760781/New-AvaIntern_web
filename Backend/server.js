@@ -136,8 +136,11 @@ app.post("/submit-form", async (req, res) => {
 const url = process.env.URL;
 
 app.post("/submit-enrollment", async (req, res) => {
+  console.log("Hello");
+
   console.log("Received enrollment form data:", req.body); // Log the incoming data
 
+  console.log("URL:", url);
   try {
     if (
       !req.body.name ||
@@ -150,12 +153,13 @@ app.post("/submit-enrollment", async (req, res) => {
         message: "Missing required fields",
       });
     }
+    console.log("URL:", url);
     const response = await axios.post(url, req.body, {
       headers: {
         "Content-Type": "application/json",
       },
     });
-    console.log(req.body),
+    console.log("Backend", req.body),
       // console.log(response);
       console.log("Google Apps Script response:", response.data);
     if (response.data.result === "success") {
