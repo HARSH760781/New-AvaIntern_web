@@ -8,6 +8,7 @@ import {
   FaLinkedin,
   FaChevronDown,
   FaCheckCircle,
+  FaTimesCircle,
 } from "react-icons/fa";
 
 import { ToastContainer, toast } from "react-toastify";
