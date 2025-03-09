@@ -375,6 +375,7 @@ function ResponsiveAppBar() {
                         component={Link}
                         to={course.path}
                         sx={{
+                          width: "100%",
                           textDecoration: "none",
                           color: "#000",
                           fontWeight: "bold",
