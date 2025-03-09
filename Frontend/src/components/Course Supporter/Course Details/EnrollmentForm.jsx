@@ -243,6 +243,7 @@ const EnrollmentForm = () => {
       }
     } catch (error) {
       console.error("Error:", error);
+      console.log("response.json:", result);
       toast.error(`Failed to submit form: ${error.message}`, {
         autoClose: 3000,
         style: { background: "white", color: "black" },
