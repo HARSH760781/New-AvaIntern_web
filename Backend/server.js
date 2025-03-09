@@ -108,27 +108,39 @@ const sendUserEmail = async (formData) => {
   await transporter.sendMail(mailOptions);
   console.log("User email sent successfully.");
 };
-// console.log("Backend");
 app.post("/submit-form", async (req, res) => {
+  console.log("Received form data:", req.body); // Log the incoming data
+
   try {
-    // Send data to Google Apps Script
-    const response = await axios.post(
-      process.env.GOOGLE_SCRIPT_URL,
-      { data: [req.body] },
-      {
-        headers: { "Content-Type": "application/json" },
-      }
-    );
+    // Correct data structure to send to SheetDB
+    const timestamp = new Date().toISOString();
+    const sheetData = {
+      data: [
+        {
+          name: req.body.name,
+          email: req.body.email,
+          message: req.body.message,
+          domain: req.body.domain,
+          mobile: req.body.mobile,
+          timestamp: timestamp,
+        },
+      ],
+    };
 
-    console.log("Google Apps Script response:", response.data); // Log the response
+    const contact_url = process.env.CONTACT_URL;
+    // Send data to SheetDB
+    const response = await axios.post(contact_url, sheetData, {
+      headers: { "Content-Type": "application/json" },
+    });
+    console.log("SheetDB response:", response.data); // Log the response
 
-    // Send emails only if the Google Apps Script request is successful
-    if (response.data.result === "success") {
+    // Send emails only if the SheetDB request is successful
+    if (response.data.created > 0) {
       await sendCompanyEmail(req.body); // Send email to the company
       await sendUserEmail(req.body); // Send email to the user
     }
 
-    res.status(200).json(response.data);
+    res.status(200).json({ result: "success", created: response.data.created });
   } catch (error) {
     console.error("Error:", error.message);
     console.error("Error details:", error.response?.data); // Log detailed error
@@ -138,9 +150,8 @@ app.post("/submit-form", async (req, res) => {
 
 const url = process.env.URL;
 
+console.log("Hello");
 app.post("/submit-enrollment", async (req, res) => {
-  console.log("Hello");
-
   console.log("Received enrollment form data:", req.body); // Log the incoming data
 
   console.log("URL:", url);

@@ -35,20 +35,37 @@ const ContactUs = () => {
   };
 
   const backend_url = import.meta.env.VITE_BACKEND_URL;
-
+  const Sheet_URL = import.meta.env.VITE_SHEET_CONTACT_URL;
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true); // Show loading spinner
 
+    // Prepare the data in the correct format for SheetDB
+    const dataToSend = {
+      name: formData.name,
+      email: formData.email,
+      message: formData.message,
+      domain: formData.domain,
+      mobile: formData.mobile,
+    };
+
     try {
       const response = await fetch(`${backend_url}/submit-form`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(dataToSend), // Send the data directly
       });
 
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
       const result = await response.json();
-      if (result.result === "success") {
+
+      // Check if the record was created successfully
+      if (result.created > 0) {
         toast.success(
           <div>
             <FaCheckCircle style={{ marginRight: "10px" }} />{" "}
@@ -66,6 +83,7 @@ const ContactUs = () => {
           }
         );
 
+        // Reset form data
         setFormData({
           name: "",
           email: "",
@@ -74,37 +92,24 @@ const ContactUs = () => {
           domain: "",
         });
       } else {
-        toast.error(
-          <div>
-            <FaTimesCircle style={{ marginRight: "10px" }} /> {/* Error icon */}
-            Failed to send message. Please try again later.
-          </div>,
-          {
-            position: "top-right",
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            style: { background: "#f44336", color: "white" },
-          }
-        );
+        throw new Error("Failed to create record in the database.");
       }
     } catch (error) {
-      toast.error("Failed to send message. Please try again later.", {
+      console.error("Error:", error);
+      toast.error(`Failed to send message. Please try again later.`, {
         position: "top-right",
         autoClose: 3000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
-        style: { background: "#f44336", color: "white" }, // Custom error style
+        style: { background: "#f44336", color: "white" },
       });
-      console.error("Error:", error);
     } finally {
       setLoading(false); // Hide loading spinner
     }
   };
+
   const toggleFAQ = (index) => {
     // If the clicked FAQ is already open, close it. Otherwise, open the clicked FAQ.
     setOpenFaqIndex((prevIndex) => (prevIndex === index ? null : index));
