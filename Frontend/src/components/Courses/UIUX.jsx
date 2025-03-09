@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./Data Science/CourseStyles.css"; // You can reuse the same styles
+import "./Data Science/CourseStyles.css";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
@@ -9,6 +9,7 @@ import DescriptionIcon from "@mui/icons-material/Description";
 import ScheduleSessions from "../Schedule Sessions/ScheduleSessions";
 import CourseDetails from "../Course Supporter/Course Details/CourseDetails";
 import CourseHeader from "../Course Supporter/Course Header/CourseHeader";
+// import { GiArtificialIntelligence } from "react-icons/gi";
 
 const VLSI = () => {
   const [showShareOptions, setShowShareOptions] = useState(false);
@@ -27,98 +28,131 @@ const VLSI = () => {
   const toggleSection = (section) => {
     setOpenSections((prev) => ({ ...prev, [section]: !prev[section] }));
   };
-
   // Function to share using Web Share API
   const handleNativeShare = () => {
     if (navigator.share) {
       navigator.share({
-        title: "VLSI Course",
-        text: "Check out this VLSI course!",
+        title: "UI/UX Course",
+        text: "Check out this UI/UX course!",
         url: courseUrl,
       });
     } else {
       setShowShareOptions(!showShareOptions);
     }
   };
-
   const curriculumData = [
     {
-      title: "💡 Introduction to VLSI Design",
-      topics: ["Overview of VLSI", "History of VLSI", "VLSI Design Flow"],
-    },
-    {
-      title: "💡 CMOS Technology and Fabrication",
+      title: "💡 Introduction to UI-UX Design",
       topics: [
-        "CMOS Technology Overview",
-        "Fabrication Process",
-        "CMOS Inverter Design",
+        "Overview of UI-UX Design",
+        "Principles of Design",
+        "The Role of UI-UX Designer",
       ],
     },
     {
-      title: "💡 Digital Logic Design for VLSI",
-      topics: ["Combinational Logic", "Sequential Logic", "FSM Design"],
-    },
-    {
-      title: "💡 Layout Design and Verification",
-      topics: ["Floorplanning", "Place and Route", "DRC and LVS"],
-    },
-    {
-      title: "💡 Low Power VLSI Design",
+      title: "💡 User Research and Analysis",
       topics: [
-        "Power Consumption in VLSI",
-        "Techniques for Low Power Design",
-        "Dynamic Power Management",
+        "UX Research Methods",
+        "The Design Thinking Process",
+        "Understanding User Needs",
       ],
     },
     {
-      title: "💡 VLSI Design Tools and Automation",
-      topics: ["EDA Tools Overview", "Synthesis Tools", "Simulation Tools"],
+      title: "💡 UI Design Fundamentals",
+      topics: ["Persona Development", "User Journey Mapping", "Card Sorting"],
     },
     {
-      title: "💡 VLSI Testing and Fault Modeling",
+      title: "💡UI Design Tools and Techniques",
       topics: [
-        "Test Generation",
-        "Fault Models in VLSI",
-        "Testing Methodologies",
+        "Surveys and Questionnaires",
+        "Visual Design Principles",
+        "Color Theory & Typography",
+      ],
+    },
+    {
+      title: "💡 Interaction Design and Animation",
+      topics: [
+        "Layout Design",
+        "Designing for Accessibility",
+        "Design Software Overview (Sketch, Figma, Adobe XD)",
+      ],
+    },
+    {
+      title: "💡UX Design and Testing",
+      topics: [
+        "Wireframing and Prototyping",
+        "Creating Interactive Mockups",
+        "Design Handoff to Developers",
+      ],
+    },
+    {
+      title: "💡Design Systems and UI Kits",
+      topics: [
+        "Interaction Design Principles",
+        "Creating Micro-interactions",
+        "Animation Techniques",
       ],
     },
     {
       title: "💡 Final Project & Professional Development",
       topics: [
-        "VLSI Design Project",
-        "Internship Opportunities",
-        "Preparing for VLSI Industry",
+        "Designing for Mobile and Responsive Web",
+        "Usability Testing & Heuristic Evaluation",
+        "ASSESSMENT & QUIZ - 2",
+        "A/B Testing",
+      ],
+    },
+    {
+      title: "💡  Final Project Part-2",
+      topics: [
+        "Project Assignment",
+        "Designing for Scalability",
+        "Collaborating with Developers",
+      ],
+    },
+    {
+      title: "💡  Final Project Part-3",
+      topics: [
+        "Creating UI Kits and Design Systems",
+        "Component-Based Design",
+        "Atomic Design Principles",
+      ],
+    },
+    {
+      title: "💡  Final Project Part-4",
+      topics: [
+        "Building a Portfolio",
+        "Freelance vs Agency vs In-House",
+        "Project Review",
       ],
     },
   ];
-
   const scheduleData = [
-    { week: "Week 1-4", topic: "Introduction to VLSI Design" },
-    { week: "Week 5-8", topic: "CMOS Technology & Digital Logic Design" },
-    { week: "Week 9-12", topic: "Layout Design, Power, and Automation" },
-    { week: "Week 13-16", topic: "Testing, Fault Modeling, and Project Work" },
+    { week: "Week 1-4", topic: " Introduction to UI/UX" },
+    { week: "Week 5-8", topic: "Core UI/UX Techniques" },
+    { week: "Week 9-10", topic: "Advanced UI/UX Techniques" },
+    { week: "Week 11-12", topic: "Practical Applications and Projects" },
   ];
 
   return (
     <div className="web-dev-container">
       {/* Header Section */}
       <CourseHeader
-        title="VLSI"
+        title="UI/UX"
         breadcrumbs={[
           { label: "Home", link: "/" },
           { label: "Courses", link: "/courses" },
-          { label: "VLSI" },
+          { label: "UI/UX" },
         ]}
       />
 
       {/* Course Content Section */}
       <div className="course-content">
         <div className="course-text">
-          <h2>About VLSI</h2>
+          <h2>About UI/UX</h2>
           <p>
-            The VLSI course focuses on the design and fabrication of Very Large
-            Scale Integration circuits, including essential topics like CMOS
-            technology, logic design, and low-power VLSI techniques.
+            A UI-UX design course typically focuses on the principles and
+            practices of user interface (UI) and user experience (UX) design.
           </p>
           <Link to="/courses">
             <button className="explore-btn">Explore Course</button>
@@ -129,15 +163,15 @@ const VLSI = () => {
       {/* Course Details Section */}
       <CourseDetails
         courseUrl={courseUrl}
-        title="VL"
-        subtitle="SI"
-        description="Designing Advanced Digital Systems 🖥️"
+        title="UI/"
+        subtitle="UX"
+        description="Transforming Ideas into Intuitive Experiences ✨"
         keyPoints={[
-          "🔥 Learn VLSI Design Techniques",
-          "💡 Master CMOS Technology",
-          "🛠️ Hands-on VLSI Projects",
+          "🔥 UI/UX (ML) ",
+          "🚀 Learn UI/UX Algorithms",
+          "💼 Hands-on Real Projects",
         ]}
-        imageUrl={"Courses/VLSI .png"}
+        imageUrl={"Courses/VLSI.png"}
       />
 
       {/* Course Menu Navigation */}
@@ -166,47 +200,67 @@ const VLSI = () => {
       <div className={`tab-content ${activeTab}`}>
         {activeTab === "overview" && (
           <div className="tab-panel">
-            <h2>Welcome to the VLSI Course 🎓</h2>
+            <h2>Welcome to Avaintern 🤝</h2>
             <p className="tagline">
-              "Dive deep into VLSI, understand chip design, and explore the
-              latest technologies shaping the future of electronics!"
+              "Explore the fascinating realm of UI/UX, gain essential insights,
+              and understand the fundamentals that drive intelligent systems in
+              today's innovative world."
             </p>
             <h3>Why Choose Us?</h3>
             <ul>
               <li>
-                🚀 <strong>Comprehensive Curriculum :</strong> Learn
-                industry-relevant skills.
+                🚀 <strong>Comprehensive Curriculum :</strong> "Industry-aligned
+                syllabus integrating core principles and applications. "
               </li>
               <li>
-                🛠️ <strong>Hands-on Learning :</strong> Work on real-world VLSI
-                projects.
+                🛠️ <strong>Hands-on Learning :</strong> Work on real-world
+                projects and case studies.
               </li>
               <li>
-                💼 <strong>Career Opportunities :</strong> Job support and
-                resume building.
+                💼 <strong>Career Opportunities : </strong> Job assistance,
+                interview preparation, and resume-building support.
               </li>
               <li>
-                🤝 <strong>Mentorship :</strong> Get guidance from industry
-                professionals.
+                🤝 <strong>Supportive Community :</strong> Network with mentors,
+                peers, and industry experts.
               </li>
               <li>
-                🎥 <strong>Live Sessions & Recorded Classes :</strong> Flexible
-                learning.
+                🎥 <strong>Live Sessions & Comfortable Training :</strong>{" "}
+                Interactive live classes with flexible learning options.
               </li>
               <li>
-                📼 <strong>Internship Opportunity :</strong> Hands-on experience
-                through internships.
+                📼 <strong>Recorded Sessions :</strong> Access to recorded
+                lectures for revision at any time.
+              </li>
+              <li>
+                🎓 <strong>Internship Opportunity :</strong> Gain hands-on
+                experience with internship programs.
               </li>
             </ul>
-            <h3>What is VLSI?</h3>
+            <h3>What is UI/UX?</h3>{" "}
             <p>
-              VLSI stands for Very Large Scale Integration, which is the process
-              of creating integrated circuits by combining thousands to millions
-              of transistors on a single chip. This technology is essential in
-              modern computing, enabling the creation of powerful microchips
-              used in various electronic devices, including smartphones,
-              computers, and more. Learn how VLSI design works and become
-              proficient in chip design and layout.
+              {" "}
+              UI/UX design focuses on creating intuitive and engaging user
+              interfaces (UI) and user experiences (UX) for digital products and
+              services. UI design involves the visual aspects of a product,
+              including layout, colors, typography, and interactive elements,
+              while UX design emphasizes the overall feel and usability of the
+              product, ensuring a seamless and enjoyable experience for users.{" "}
+              <strong>Wireframing</strong> is used to create basic layouts and
+              structures, <strong>prototyping</strong> allows designers to build
+              interactive models for testing, and <strong>user research</strong>{" "}
+              helps understand user needs and behaviors. Effective UI/UX design
+              is crucial for creating products that are not only functional but
+              also delightful to use.{" "}
+            </p>{" "}
+            <p>
+              {" "}
+              🚀 Exciting News! Join Our UI/UX Mastery Program 🎨🌟 Embark on an
+              immersive journey into the world of UI/UX with our comprehensive
+              design training. This program offers hands-on experience,
+              practical projects, and expert mentorship to elevate your UI/UX
+              skills to the next level. Ready to unlock the power of design?
+              Enroll now and transform your future! 🌐💡{" "}
             </p>
           </div>
         )}
