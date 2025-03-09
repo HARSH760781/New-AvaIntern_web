@@ -129,9 +129,14 @@ app.post("/submit-form", async (req, res) => {
 
     const contact_url = process.env.CONTACT_URL;
     // Send data to SheetDB
-    const response = await axios.post(contact_url, sheetData, {
-      headers: { "Content-Type": "application/json" },
-    });
+    const response = await axios.post(
+      "https://sheetdb.io/api/v1/zqh6u73fz34i4",
+
+      sheetData,
+      {
+        headers: { "Content-Type": "application/json" },
+      }
+    );
     console.log("SheetDB response:", response.data); // Log the response
 
     // Send emails only if the SheetDB request is successful

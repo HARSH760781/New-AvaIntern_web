@@ -34,7 +34,8 @@ const ContactUs = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const backend_url = import.meta.env.VITE_BACKEND_URL;
+  // const backend_url = import.meta.env.VITE_BACKEND_URL;
+  const backend_url = "https://new-avaintern-web.onrender.com"; // Replace with your backend URL
   const Sheet_URL = import.meta.env.VITE_SHEET_CONTACT_URL;
   const handleSubmit = async (e) => {
     e.preventDefault();
