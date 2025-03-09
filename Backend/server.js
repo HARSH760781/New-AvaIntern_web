@@ -108,15 +108,18 @@ const sendUserEmail = async (formData) => {
   await transporter.sendMail(mailOptions);
   console.log("User email sent successfully.");
 };
-
+// console.log("Backend");
 app.post("/submit-form", async (req, res) => {
-  console.log("Received form data:", req.body); // Log the incoming data
-
   try {
     // Send data to Google Apps Script
-    const response = await axios.post(GOOGLE_SCRIPT_URL, req.body, {
-      headers: { "Content-Type": "application/json" },
-    });
+    const response = await axios.post(
+      process.env.GOOGLE_SCRIPT_URL,
+      { data: [req.body] },
+      {
+        headers: { "Content-Type": "application/json" },
+      }
+    );
+
     console.log("Google Apps Script response:", response.data); // Log the response
 
     // Send emails only if the Google Apps Script request is successful

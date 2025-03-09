@@ -213,6 +213,7 @@ const EnrollmentForm = () => {
               Mobile: formData.mobile,
               "Interest Domain": formData.interestDomain,
               Price: formData.price,
+              TimeStamp: new Date().toISOString().split("T")[0],
             },
           ],
         }),
@@ -222,7 +223,6 @@ const EnrollmentForm = () => {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
       const result = await response.json();
-      console.log("response.json:", result);
       if (result.created > 0) {
         toast.success("Redirecting to the payment...", {
           autoClose: 2000,
@@ -243,7 +243,6 @@ const EnrollmentForm = () => {
       }
     } catch (error) {
       console.error("Error:", error);
-      console.log("response.json:", result);
       toast.error(`Failed to submit form: ${error.message}`, {
         autoClose: 3000,
         style: { background: "white", color: "black" },
