@@ -155,7 +155,7 @@ app.post("/submit-form", async (req, res) => {
 
 const url = process.env.URL;
 
-console.log("Hello");
+// console.log("Hello");
 app.post("/submit-enrollment", async (req, res) => {
   console.log("Received enrollment form data:", req.body); // Log the incoming data
 

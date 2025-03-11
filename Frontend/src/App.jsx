@@ -1,28 +1,17 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import AppBar from "./components/ResponsiveAppBar";
 import Hero from "./components/Hero";
-import Banner from "./components/Banner/Banner";
-import Sponser from "./components/Sponser/Sponser";
-import Provide from "./components/Provide/Provide";
-import Home from "./components/Test/Achievements";
-import Testimonial from "./components/Feedback/Testimonial";
 import Footer from "./components/Footer/Footer";
-import StatsCardContainer from "./components/Counter/StatsCardContainer";
-import ExplorePrograms from "./components/Explore Program/ExplorePrograms";
 import About from "./components/About/About";
 import Certification from "./components/Certifications/Certification";
-import axios from "axios";
 import WebDevelopment from "./components/Courses/Web Development/WebDevelopment";
 import DataScience from "./components/Courses/Data Science/DataScience";
 import ArtificialIntelligence from "./components/Courses/ArtificialInteligence";
 import MachineLearning from "./components/Courses/MachineLearning";
 import DigitalMarketing from "./components/Courses/DigitalMarketing";
 import CloudComputing from "./components/Courses/CloudComputing";
-import UIUX from "./components/Courses/UIUX";
+import UiUx from "./components/Courses/UiUX ";
 import CareerPage from "./components/Career/CareerPage";
 import ContactUs from "./components/ContactUs/ContactUs";
 import AutoCad from "./components/Courses/AutoCad";
@@ -36,16 +25,13 @@ import HR from "./components/Courses/HR";
 import Business from "./components/Courses/BusinessAnalytics";
 import DevOps from "./components/Courses/Devops";
 import SoftwareTesting from "./components/Courses/SoftwareTesting";
-import Login from "./components/LoginSignup/Login";
-import Signup from "./components/LoginSignup/SignUp";
 import LoginSignup from "./components/LoginSignup/LoginSignup";
 import EnrollmentForm from "./components/Course Supporter/Course Details/EnrollmentForm";
 import PaymentPage from "./components/Course Supporter/Course Details/PaymentPage";
-import PaymentSuccess from "./components/Course Supporter/Course Details/PaymentSuccess";
 import SuccessPage from "./components/Course Supporter/Course Details/PaymentSuccess";
 import PaymentFailure from "./components/Course Supporter/Course Details/PaymentFailure";
 import TermsAndCondition from "./components/Privacy & Conditions/TermsAndCondition";
-import VLSI from "./components/Courses/UIUX";
+import VLSI from "./components/Courses/VLSI";
 import PrivacyPolicy from "./components/Privacy & Conditions/PrivacyPolicy";
 import ScrollToTop from "./components/ScrollToTop";
 import NotFound from "./components/NotFound";
@@ -83,7 +69,7 @@ function App() {
           element={<DigitalMarketing />}
         />
         <Route path="/Courses/cloud-computing" element={<CloudComputing />} />
-        <Route path="/Courses/ui-ux" element={<UIUX />} />
+        <Route path="/Courses/ui-ux" element={<UiUx />} />
         <Route path="/login" element={<LoginSignup />} />
         <Route
           path="/courses/:courseName/enroll"

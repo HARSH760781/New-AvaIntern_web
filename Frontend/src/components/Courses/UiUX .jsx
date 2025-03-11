@@ -171,7 +171,7 @@ const VLSI = () => {
           "🚀 Learn UI/UX Algorithms",
           "💼 Hands-on Real Projects",
         ]}
-        imageUrl={"Courses/VLSI.png"}
+        imageUrl={"Courses/UiUx.png"}
       />
 
       {/* Course Menu Navigation */}

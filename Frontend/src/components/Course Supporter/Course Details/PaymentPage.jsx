@@ -52,6 +52,7 @@ const PaymentPage = () => {
       const backend_url = import.meta.env.VITE_BACKEND_URL;
 
       const orderAmount = parseFloat(amount.replace("Rs ", ""));
+      // const orderAmount = 1;
       const response = await fetch(`${backend_url}/create-payment-order`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -78,7 +79,7 @@ const PaymentPage = () => {
 
       // Initialize Razorpay payment
       const options = {
-        key: "rzp_test_BIfZC2OK9KNJuB", // Replace with your Razorpay Key ID
+        key: "rzp_live_7bDrhYggmlkcNc", // Replace with your Razorpay Key ID
         amount: data.amount,
         currency: data.currency,
         order_id: data.id,
@@ -174,6 +175,7 @@ const PaymentPage = () => {
             gutterBottom
           >
             Amount : {amount}
+            {/* Amount : 1 */}
           </Typography>
           <Typography
             variant="h6"

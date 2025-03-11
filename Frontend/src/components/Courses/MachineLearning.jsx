@@ -155,7 +155,7 @@ const MachineLearning = () => {
           "🚀 Learn Machine Learning Algorithms",
           "💼 Hands-on Real Projects",
         ]}
-        imageUrl={"hero_image.jpg"}
+        imageUrl={"/images/Courses/machine Learning.png"}
       />
 
       {/* Course Menu Navigation */}

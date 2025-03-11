@@ -22,7 +22,7 @@ const SuccessPage = () => {
 
   const { transactionData } = location.state || {}; // Get transactionData from location state
 
-  console.log("Data:", transactionData);
+  // console.log("Data:", transactionData);
   // Animation using react-spring
   const fadeIn = useSpring({
     opacity: 1,
