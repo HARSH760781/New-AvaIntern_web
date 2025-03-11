@@ -81,6 +81,7 @@ const StatsCardContainer = () => {
       const SHEET_ID = import.meta.env.VITE_SHEET_ID; // Replace with your Google Sheet ID
       const RANGE = "Sheet1!G2:G"; // Adjust the range to match your sheet
       const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${RANGE}?key=${API_KEY}`;
+      // console.log(url);
 
       try {
         const response = await fetch(url);
