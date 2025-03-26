@@ -125,8 +125,10 @@ const CertificationPage = () => {
         // console.log(data.values);
         const imageUrls = data.values.map((row) => row[2]); // Extract image URLs
         const mentorData = data.values.map((row) => row[3]); // Extract image URLs
-        const mentorUrls = mentorData.map((item) => item.split(","));
-        // console.log(imageUrls);
+        const mentorUrls = mentorData.map((item) =>
+          item ? item.split(",") : null
+        );
+        // console.log("men", mentorUrls);
 
         setImages(imageUrls);
         setMentors(mentorUrls);
