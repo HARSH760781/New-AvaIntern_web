@@ -21,10 +21,10 @@ const ChatBot = () => {
     if (isOpen) {
       setHistory([
         {
-          text: "👋 Hi there! I’m **EduBot**, your AI-powered learning assistant.",
+          text: "👋 Hi there! I’m  here for your help.",
           sender: "bot",
         },
-        { text: "How can I assist you today?", sender: "bot" },
+      //  { text: "How can I assist you today?", sender: "bot" },
       ]);
     }
   }, [isOpen]);
