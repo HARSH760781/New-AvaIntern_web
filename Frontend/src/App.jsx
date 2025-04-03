@@ -35,6 +35,7 @@ import VLSI from "./components/Courses/VLSI";
 import PrivacyPolicy from "./components/Privacy & Conditions/PrivacyPolicy";
 import ScrollToTop from "./components/ScrollToTop";
 import NotFound from "./components/NotFound";
+import WhatsAppButton from "./components/Whatsapp Support/WhatsAppButton";
 function App() {
   return (
     <Router>
@@ -83,6 +84,7 @@ function App() {
 
         <Route path="*" element={<NotFound />} />
       </Routes>
+      {/* <WhatsAppButton /> */}
       <Footer />
     </Router>
   );
