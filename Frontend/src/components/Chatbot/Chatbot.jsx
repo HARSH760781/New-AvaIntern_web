@@ -68,7 +68,7 @@ const ChatBot = () => {
       {isOpen && (
         <div className="chatbox">
           <div className="chat-header">
-            <FaRobot /> <span>EduBot - AI Assistant</span>
+            <FaRobot /> <span>Avaintern - Support Assistant</span>
           </div>
           <div className="chat-body" ref={chatBodyRef}>
             {history.map((msg, index) => (
@@ -123,10 +123,10 @@ const ChatBot = () => {
 
 // Options list
 const options = [
-  {
+ /* {
     text: "🤖 About EduBot",
     response:
-      "I'm **EduBot**, your AI assistant! I can guide you through courses, FAQs, certification, and support options.",
+      "I'm **EduBot**, your support assistant! I can guide you through courses, FAQs, certification, and support options.",
     // icon: <FaInfoCircle />,
     className: "about",
   },
@@ -143,7 +143,7 @@ const options = [
       "If you've made a payment but haven't received confirmation, check your email. If the issue persists, please contact our support team.",
     // icon: <FaMoneyBillWave />,
     className: "payment",
-  },
+  },*/
   {
     text: "📞 Contact Support",
     response: "🔄 Connecting to support...",
