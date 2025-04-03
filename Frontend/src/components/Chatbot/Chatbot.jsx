@@ -9,7 +9,7 @@ import {
   FaCertificate,
   FaMoneyBillWave,
 } from "react-icons/fa";
-import "./ChatBot.css";
+import "./Chatbot.css";
 
 const ChatBot = () => {
   const [isOpen, setIsOpen] = useState(false);
